@@ -6,9 +6,12 @@ public class GameplayInstaller : MonoInstaller
     [SerializeField] private TurretTiles turretTiles;
     [SerializeField] private GameUI gameUI;
     [SerializeField] private InputHandler inputHandler;
+    [SerializeField] private EnemySpawner enemySpawner;
+
+    [Header("Prefabs"),Space(2)]
     [SerializeField] private Turret turretPrefab;
     [SerializeField] private Enemy enemyPrefab;
-    [SerializeField] private EnemySpawner enemySpawner;
+    [SerializeField] private Bullet bulletPrefab;
 
     public override void InstallBindings()
     {
@@ -16,11 +19,15 @@ public class GameplayInstaller : MonoInstaller
         BindInputHandler();
 
         BindTurretPrefab();
+        BindBulletPrefab();
         BindTurretFactory();
+        BindBulletFactofy();
+        BindBulletPool();
         BingTurretSpawner();
 
         BindEnemyPrefab();
         BindEnemyFactory();
+        BindEnemyPool();
         BindEnemySpawner();
 
         BindGameUI();
@@ -64,6 +71,13 @@ public class GameplayInstaller : MonoInstaller
             .AsSingle()
             .Lazy();
     }
+    private void BindBulletPrefab()
+    {
+        Container
+            .BindInstance(bulletPrefab)
+            .AsSingle()
+            .Lazy();
+    }
     private void BindTurretFactory()
     {
         Container
@@ -71,11 +85,27 @@ public class GameplayInstaller : MonoInstaller
             .AsSingle()
             .NonLazy();
     }
-
+    private void BindBulletPool()
+    {
+        Container
+            .BindInterfacesAndSelfTo<ObjectPool<Bullet>>()
+            .AsSingle()
+            .WithArguments(5)
+            .Lazy();
+    }
     private void BingTurretSpawner()
     {
         Container
             .BindInterfacesAndSelfTo<TurretSpawner>()
+            .AsSingle()
+            .Lazy();
+    }
+
+    private void BindBulletFactofy()
+    {
+        Container
+            .Bind<GameObjectFactory<Bullet>>()
+            .To<BulletFactory>()
             .AsSingle()
             .Lazy();
     }
@@ -97,8 +127,19 @@ public class GameplayInstaller : MonoInstaller
     private void BindEnemyFactory()
     {
         Container
-            .BindInterfacesAndSelfTo<EnemyFactory>()
+            .Bind<GameObjectFactory<Enemy>>()
+            .To<EnemyFactory>()
             .AsSingle()
+            .Lazy();
+    }
+
+    private void BindEnemyPool()
+    {
+
+            Container
+            .BindInterfacesAndSelfTo<ObjectPool<Enemy>>()
+            .AsSingle()
+            .WithArguments(5)
             .Lazy();
     }
 

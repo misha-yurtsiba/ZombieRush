@@ -251,11 +251,13 @@ MonoBehaviour:
   turretTiles: {fileID: 737720978}
   gameUI: {fileID: 62952597}
   inputHandler: {fileID: 1228380688}
-  turretPrefab: {fileID: 6266009046199500776, guid: e7982b8105f40244ab920d7481815417,
+  enemySpawner: {fileID: 948322320}
+  turretPrefab: {fileID: 6180738199695232595, guid: e7982b8105f40244ab920d7481815417,
     type: 3}
   enemyPrefab: {fileID: 3647610342728579057, guid: 1eab5d8eab37e3944823d98071f33c19,
     type: 3}
-  enemySpawner: {fileID: 948322320}
+  bulletPrefab: {fileID: 3373468760828897025, guid: 2e1e256fbb04465439a7c5d12b8f4b55,
+    type: 3}
 --- !u!1 &208974853
 GameObject:
   m_ObjectHideFlags: 0
@@ -2104,7 +2106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPosition: {fileID: 948322321}
   targetPosition: {fileID: 226956736}
-  spawnRate: 0.5
+  spawnRate: 2
 --- !u!4 &948322321
 Transform:
   m_ObjectHideFlags: 0

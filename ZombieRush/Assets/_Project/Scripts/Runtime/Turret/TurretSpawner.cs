@@ -40,7 +40,7 @@ public class TurretSpawner
         if (Physics.Raycast(ray, out hit) && hit.transform.TryGetComponent(out TurretTile turretTile) && turretTile.curentTurret == null)
         {
             Turret newTurret = turretFactory.CreateTurret();
-            newTurret.transform.position = turretTile.transform.position;
+            newTurret.transform.position = turretTile.transform.position + new Vector3(0,0.25f,0);
             turretTile.curentTurret = newTurret;
             turretTile.GetComponent<MeshRenderer>().material.color = Color.yellow;
         }

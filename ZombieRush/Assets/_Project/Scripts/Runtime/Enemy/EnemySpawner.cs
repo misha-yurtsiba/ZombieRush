@@ -5,19 +5,17 @@ using Zenject;
 
 public class EnemySpawner : MonoBehaviour 
 {
-    private IEnemyFactory enemyFactory;
-
     [SerializeField] private Transform spawnPosition;
     [SerializeField] private Transform targetPosition;
-
     [SerializeField] private float spawnRate;
 
+    private ObjectPool<Enemy> enemyPool;
     private float timer;
 
     [Inject]
-    private void Construct(IEnemyFactory enemyFactory)
+    private void Construct(ObjectPool<Enemy> enemyPool)
     {
-        this.enemyFactory = enemyFactory;
+        this.enemyPool = enemyPool;
     }
 
     public void StartSpawn()
@@ -36,12 +34,10 @@ public class EnemySpawner : MonoBehaviour
     }
     private void SpawnOneEnemy()
     {
-        Enemy newEnemy = enemyFactory.CreateEnemy();
-        Vector3 randomOffset = new Vector3(Random.Range(-2f,2f),0,0);
-        
-        newEnemy.transform.position = spawnPosition.position + randomOffset;
+        Vector3 randomOffset = new Vector3(Random.Range(-2f, 2f), 0, 0);
+        Enemy newEnemy = enemyPool.Get(spawnPosition.position + randomOffset);
         Vector3 enemyTargetPos = targetPosition.position + randomOffset;
 
-        newEnemy.Init(enemyTargetPos, 1);
+        newEnemy.Init(enemyTargetPos, 1,20,enemyPool);
     }
 }

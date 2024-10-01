@@ -1,4 +1,5 @@
-﻿public interface IEnemyFactory
+﻿using UnityEngine;
+public interface IEnemyFactory
 {
-    public Enemy CreateEnemy();
+    public Enemy CreateEnemy(Vector3 spawnPos);
 }

@@ -2,19 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
-public class EnemyFactory : IEnemyFactory
+public class EnemyFactory : GameObjectFactory<Enemy>
 {
-    private DiContainer diContainer;
-    private Enemy enemyPrefab;
-
-    public EnemyFactory(DiContainer diContainer, Enemy enemyPrefab)
+    public EnemyFactory(DiContainer diContainer, Enemy enemyPrefab) : base(diContainer, enemyPrefab)
     {
-        this.diContainer = diContainer;
-        this.enemyPrefab = enemyPrefab;
+        
     }
-    
-    public Enemy CreateEnemy()
+    public override Enemy Create(Vector3 spawnPos)
     {
-        return diContainer.InstantiatePrefab(enemyPrefab,Vector3.zero,Quaternion.identity,null).GetComponent<Enemy>();
+        return diContainer.InstantiatePrefab(objectPrefab, spawnPos, Quaternion.identity,null).GetComponent<Enemy>();
     }
 }
