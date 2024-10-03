@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class TurretSpawner
 {
+    public int turretPrice = 100;
+
     private InputHandler inputHandler;
     private TurretTiles turretTiles;
+    private Money money;
     private ITurretFactory turretFactory;
     private IEnumerable<TurretTile> emptyTurretTiles;
 
     private bool isSpawning = false;
-    public TurretSpawner(InputHandler inputHandler, TurretTiles turretTiles, ITurretFactory turretFactory)
+    public TurretSpawner(InputHandler inputHandler, TurretTiles turretTiles, ITurretFactory turretFactory, Money money)
     {
         this.inputHandler = inputHandler;
         this.turretTiles = turretTiles;
         this.turretFactory = turretFactory;
+        this.money = money;
     }
 
     public void BuyTurret()
     {
-        if (isSpawning) return;
+        if (isSpawning || money.PlayerMoney < turretPrice) return;
 
         inputHandler.playerTouched += SpawnTurret;
         emptyTurretTiles = turretTiles.GetTuretTiles();
@@ -43,6 +47,7 @@ public class TurretSpawner
             newTurret.transform.position = turretTile.transform.position + new Vector3(0,0.25f,0);
             turretTile.curentTurret = newTurret;
             turretTile.GetComponent<MeshRenderer>().material.color = Color.yellow;
+            money.Buy(turretPrice);
         }
 
         foreach (TurretTile tile in emptyTurretTiles)

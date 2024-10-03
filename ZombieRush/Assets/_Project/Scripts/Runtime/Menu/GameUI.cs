@@ -7,6 +7,8 @@ public class GameUI : MonoBehaviour
 {
     [SerializeField] private MainMenu mainMenu;
     [SerializeField] private TurretShopView turretShopView;
+    [SerializeField] private MoneyView moneyView;
+
     private IStartGame startGame;
     
     [Inject]
@@ -24,5 +26,6 @@ public class GameUI : MonoBehaviour
         mainMenu.gameObject.SetActive(false);
         startGame.StartGameplay();
         turretShopView.gameObject.SetActive(true);
+        moneyView.gameObject.SetActive(true);
     }
 }

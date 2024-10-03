@@ -13,6 +13,7 @@ public class Turret : MonoBehaviour
     [SerializeField] private float attackRange;
     [SerializeField] private float attackRate;
     [SerializeField] private float damage;
+    [SerializeField] private int turretPrice;
 
     private ObjectPool<Bullet> bulletPool;
     private Enemy targetEnemy;
@@ -55,7 +56,7 @@ public class Turret : MonoBehaviour
     }
     private bool IsEnemyInAttackRange()
     {
-        if (targetEnemy == null)
+        if (targetEnemy == null || !targetEnemy.gameObject.activeInHierarchy)
             return false;
 
         if(Vector3.Distance(transform.position, targetEnemy.transform.position) > attackRange)
@@ -72,7 +73,7 @@ public class Turret : MonoBehaviour
     {
         Bullet bullet = bulletPool.Get(bulletSpawnPoint.position);
         bullet.transform.rotation = bulletSpawnPoint.rotation;
-        bullet.Init(targetEnemy.transform,bulletPool, 10, 10);
+        bullet.Init(targetEnemy.transform,bulletPool, 10, damage);
 
         attackTimer = 0;
         canAttack = false;

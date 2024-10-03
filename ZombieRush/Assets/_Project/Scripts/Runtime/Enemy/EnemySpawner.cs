@@ -9,13 +9,15 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform targetPosition;
     [SerializeField] private float spawnRate;
 
+    private Money money;
     private ObjectPool<Enemy> enemyPool;
     private float timer;
 
     [Inject]
-    private void Construct(ObjectPool<Enemy> enemyPool)
+    private void Construct(ObjectPool<Enemy> enemyPool, Money money)
     {
         this.enemyPool = enemyPool;
+        this.money = money;
     }
 
     public void StartSpawn()
@@ -38,6 +40,6 @@ public class EnemySpawner : MonoBehaviour
         Enemy newEnemy = enemyPool.Get(spawnPosition.position + randomOffset);
         Vector3 enemyTargetPos = targetPosition.position + randomOffset;
 
-        newEnemy.Init(enemyTargetPos, 1,20,enemyPool);
+        newEnemy.Init(enemyTargetPos, 1,20,enemyPool, money);
     }
 }

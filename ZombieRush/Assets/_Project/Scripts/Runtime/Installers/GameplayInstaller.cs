@@ -25,6 +25,7 @@ public class GameplayInstaller : MonoInstaller
         BindBulletPool();
         BingTurretSpawner();
 
+        BindMoney();
         BindEnemyPrefab();
         BindEnemyFactory();
         BindEnemyPool();
@@ -63,6 +64,14 @@ public class GameplayInstaller : MonoInstaller
             .BindInstance(inputHandler)
             .AsSingle()
             .NonLazy();
+    }
+
+    private void BindMoney()
+    {
+        Container
+            .BindInterfacesAndSelfTo<Money>()
+            .AsSingle()
+            .Lazy();
     }
     private void BindTurretPrefab()
     {

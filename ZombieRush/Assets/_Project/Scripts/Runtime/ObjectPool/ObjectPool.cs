@@ -32,6 +32,10 @@ public class ObjectPool<T> where T : MonoBehaviour
         else
         {
             T obj = poolObjects.Pop();
+
+            if(obj == null)
+                obj = Create(spawnPos);
+
             obj.gameObject.SetActive(true);
             obj.transform.position = spawnPos;
             return obj;

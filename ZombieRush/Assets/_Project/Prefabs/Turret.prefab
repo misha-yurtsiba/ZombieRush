@@ -280,8 +280,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   attackRange: 5
-  attackRate: 2
-  damage: 10
+  attackRate: 0.25
+  damage: 5
+  turretPrice: 100
 --- !u!1 &8099820844447988566
 GameObject:
   m_ObjectHideFlags: 0
