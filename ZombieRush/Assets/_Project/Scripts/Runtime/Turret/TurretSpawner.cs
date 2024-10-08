@@ -1,9 +1,11 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TurretSpawner
 {
+    public Action<int> turretSpawned;
+
     public int turretPrice = 100;
 
     private InputHandler inputHandler;
@@ -37,7 +39,6 @@ public class TurretSpawner
 
     private void SpawnTurret(Vector2 mousePosition)
     {
-        Debug.Log(mousePosition);
         Ray ray = Camera.main.ScreenPointToRay(mousePosition);
         RaycastHit hit;
 
@@ -48,6 +49,9 @@ public class TurretSpawner
             turretTile.curentTurret = newTurret;
             turretTile.GetComponent<MeshRenderer>().material.color = Color.yellow;
             money.Buy(turretPrice);
+
+            turretPrice += (int)Mathf.Round(turretPrice * 0.1f / 10) * 10;
+            turretSpawned?.Invoke(turretPrice);
         }
 
         foreach (TurretTile tile in emptyTurretTiles)

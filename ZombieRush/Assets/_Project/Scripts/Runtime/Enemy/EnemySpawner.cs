@@ -1,17 +1,19 @@
 using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using Zenject;
 
 public class EnemySpawner : MonoBehaviour 
 {
+    public Action endSpawnSubWave;
+    public SubWave subWave;
+
     [SerializeField] private Transform spawnPosition;
     [SerializeField] private Transform targetPosition;
-    [SerializeField] private float spawnRate;
 
     private Money money;
     private ObjectPool<Enemy> enemyPool;
-    private float timer;
+    private float startDelay;
 
     [Inject]
     private void Construct(ObjectPool<Enemy> enemyPool, Money money)
@@ -20,26 +22,35 @@ public class EnemySpawner : MonoBehaviour
         this.money = money;
     }
 
-    public void StartSpawn()
+    public void StartSpawn(SubWave newSubWave,int newStartDelay)
     {
+        subWave = newSubWave;
+        startDelay = newStartDelay;
         StartCoroutine(SpawnCoroutine());
     }
 
 
     private IEnumerator SpawnCoroutine()
     {
-        while (true)
+        int spawnedEnemys = 0;
+        yield return new WaitForSeconds(startDelay);
+        while (spawnedEnemys != subWave.maxEnemyCount)
         {
             SpawnOneEnemy();
-            yield return new WaitForSeconds(spawnRate);
+            spawnedEnemys++;
+            yield return new WaitForSeconds(subWave.spawnInterval);
         }
+        endSpawnSubWave?.Invoke();
     }
     private void SpawnOneEnemy()
     {
-        Vector3 randomOffset = new Vector3(Random.Range(-2f, 2f), 0, 0);
-        Enemy newEnemy = enemyPool.Get(spawnPosition.position + randomOffset);
-        Vector3 enemyTargetPos = targetPosition.position + randomOffset;
+        Vector3 randomOffset = new Vector3(UnityEngine.Random.Range(-2f, 2f), 0, 0);
+        //Enemy newEnemy = enemyPool.Get(spawnPosition.position + randomOffset);
+        Enemy newEnemy = Instantiate(subWave.enemyPrefab, spawnPosition.position + randomOffset, Quaternion.identity).GetComponent<Enemy>();
+        Debug.Log(newEnemy);
 
+        Vector3 enemyTargetPos = targetPosition.position + randomOffset;
+        newEnemy.gameObject.SetActive(true);
         newEnemy.Init(enemyTargetPos, 1,20,enemyPool, money);
     }
 }

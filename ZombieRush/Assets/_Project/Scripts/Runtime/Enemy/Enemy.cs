@@ -33,7 +33,8 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             money.AddMoney(killMoney);
-            enemyPool.Relese(this);
+            //enemyPool.Relese(this);
+            Destroy(gameObject);
         }
     }
 }

@@ -21,14 +21,21 @@ public class TurretShopView : MonoBehaviour
     private void Start()
     {
         buyTurretButton.onClick.AddListener(turretSpawner.BuyTurret);
+
+        turretPriceText.text = turretSpawner.turretPrice.ToString();
+        ChangeTextColor(money.PlayerMoney);
     }
     private void OnEnable() 
     {
         money.onValueChanget += ChangeTextColor;
-        turretPriceText.text = turretSpawner.turretPrice.ToString();
+        turretSpawner.turretSpawned += ChangeTurretPriceText;
     }
 
-    private void OnDisable() => money.onValueChanget -= ChangeTextColor;
+    private void OnDisable()
+    {
+        money.onValueChanget -= ChangeTextColor;
+        turretSpawner.turretSpawned -= ChangeTurretPriceText;
+    }
 
     private void ChangeTextColor(int mewMoney)
     {
@@ -38,4 +45,8 @@ public class TurretShopView : MonoBehaviour
             turretPriceText.color = Color.green;
     }
 
+    private void ChangeTurretPriceText(int newTurretPrice)
+    {
+        turretPriceText.text = newTurretPrice.ToString();
+    }
 }

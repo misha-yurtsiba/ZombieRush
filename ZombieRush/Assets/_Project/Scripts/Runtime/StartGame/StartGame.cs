@@ -5,19 +5,19 @@ using Zenject;
 public class StartGame : IStartGame
 {
     private TurretTiles turretTiles;
-    private EnemySpawner enemySpawner;
+    private WaveController waveController;
     private Money money;
 
-    public StartGame(TurretTiles turretTiles, EnemySpawner enemySpawner, Money money)
+    public StartGame(TurretTiles turretTiles, WaveController waveController, Money money)
     {
         this.turretTiles = turretTiles;
-        this.enemySpawner = enemySpawner;
+        this.waveController = waveController;
         this.money = money;
     }
     public void StartGameplay()
     {
         money.SetStartMoney(100);
         turretTiles.SetTurettTiles();
-        enemySpawner.StartSpawn();
+        waveController.StartGame();
     }
 }

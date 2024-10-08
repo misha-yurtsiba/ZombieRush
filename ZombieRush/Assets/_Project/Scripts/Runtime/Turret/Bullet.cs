@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        if (!targetPos.gameObject.activeInHierarchy)
+        if (targetPos == null)
         {
             GetComponent<TrailRenderer>().Clear();
             bulletPool.Relese(this);
