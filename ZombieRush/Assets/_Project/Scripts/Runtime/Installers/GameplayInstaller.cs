@@ -8,6 +8,7 @@ public class GameplayInstaller : MonoInstaller
     [SerializeField] private InputHandler inputHandler;
     [SerializeField] private EnemySpawner enemySpawner;
     [SerializeField] private WaveController waveController;
+    [SerializeField] private WaveView waveView;
 
     [Header("Prefabs"),Space(2)]
     [SerializeField] private Turret turretPrefab;
@@ -31,7 +32,9 @@ public class GameplayInstaller : MonoInstaller
         BindEnemyFactory();
         BindEnemyPool();
         BindEnemySpawner();
+
         BindWaveController();
+        BindWaveView();
 
         BindGameUI();
         BindStartGame();
@@ -158,6 +161,13 @@ public class GameplayInstaller : MonoInstaller
     {
         Container
             .BindInstance(waveController)
+            .AsSingle()
+            .NonLazy();
+    }
+    private void BindWaveView()
+    {
+        Container
+            .BindInstance(waveView)
             .AsSingle()
             .NonLazy();
     }

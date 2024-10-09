@@ -5,19 +5,18 @@ using Zenject;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Enemy stats")]
     [SerializeField] private int killMoney;
+    [SerializeField] private float movingSpeed;
+    [SerializeField] private float health;
 
     private ObjectPool<Enemy> enemyPool;
     private Money money;
     private Vector3 targetPosition;
 
-    private float movingSpeed;
-    private float health = 20;
-    public void Init(Vector3 targetPosition, float movingSpeed, float health,ObjectPool<Enemy> enemyPool, Money money)
+    public void Init(Vector3 targetPosition,ObjectPool<Enemy> enemyPool, Money money)
     {
         this.targetPosition = targetPosition;
-        this.movingSpeed = movingSpeed;  
-        this.health = health;
         this.enemyPool = enemyPool;
         this.money = money;
     }
@@ -33,7 +32,6 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             money.AddMoney(killMoney);
-            //enemyPool.Relese(this);
             Destroy(gameObject);
         }
     }

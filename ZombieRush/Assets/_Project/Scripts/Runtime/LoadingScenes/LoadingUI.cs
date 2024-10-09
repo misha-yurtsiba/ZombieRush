@@ -36,7 +36,7 @@ public class LoadingUI : MonoBehaviour
         loadingText.gameObject.SetActive(true);
         progressaBarObject.SetActive(true);
 
-        panelImage.DOFade(255, 1)
+        panelImage.DOFade(1, 1)
             .OnComplete(() => loadingPanelActive?.Invoke()); 
     }
     public void StartDeactivationAnim()
@@ -44,7 +44,7 @@ public class LoadingUI : MonoBehaviour
         loadingText.gameObject.SetActive(false);
         progressaBarObject.SetActive(false);
 
-        panelImage.DOFade(0, 2)
+        panelImage.DOFade(0, 1)
             .SetEase(Ease.OutSine)
             .OnComplete(() => gameObject.SetActive(false)); 
     }

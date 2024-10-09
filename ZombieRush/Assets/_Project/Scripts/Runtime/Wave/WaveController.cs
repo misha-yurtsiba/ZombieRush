@@ -10,14 +10,16 @@ public class WaveController : MonoBehaviour
     private WaveConfig curentWave;
     private SubWave curentSubwave;
     private EnemySpawner enemySpawner;
+    private WaveView waveView;
 
     private int subWaveCount;
     private int waveCount;
 
     [Inject]
-    private void Construct(EnemySpawner enemySpawner)
+    private void Construct(EnemySpawner enemySpawner, WaveView waveView)
     {
         this.enemySpawner = enemySpawner;
+        this.waveView = waveView;
     }
     private void OnEnable()
     {
@@ -34,7 +36,7 @@ public class WaveController : MonoBehaviour
         curentSubwave = curentWave.subWaves[0];
         subWaveCount = 0;
         waveCount = 0;
-
+        waveView.ChangeWaveText(waveCount);
         enemySpawner.StartSpawn(curentSubwave, curentWave.timeBetweenSubwave);
     }
     private void NextSubWave()
@@ -59,6 +61,6 @@ public class WaveController : MonoBehaviour
         curentWave = waveConfigs[waveCount];
         curentSubwave = curentWave.subWaves[subWaveCount];
         enemySpawner.StartSpawn(curentSubwave, curentWave.timeBetweenSubwave);
-
+        waveView.ChangeWaveText(waveCount);
     }
 }

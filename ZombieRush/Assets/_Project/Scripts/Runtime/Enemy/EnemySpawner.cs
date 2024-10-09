@@ -44,13 +44,11 @@ public class EnemySpawner : MonoBehaviour
     }
     private void SpawnOneEnemy()
     {
-        Vector3 randomOffset = new Vector3(UnityEngine.Random.Range(-2f, 2f), 0, 0);
-        //Enemy newEnemy = enemyPool.Get(spawnPosition.position + randomOffset);
-        Enemy newEnemy = Instantiate(subWave.enemyPrefab, spawnPosition.position + randomOffset, Quaternion.identity).GetComponent<Enemy>();
-        Debug.Log(newEnemy);
-
+        Vector3 randomOffset = new Vector3(UnityEngine.Random.Range(-2f, 2f), 0.5f, 0);
+        Enemy newEnemy = Instantiate(subWave.enemyPrefab, spawnPosition.position + randomOffset, Quaternion.Euler(0,180,0)).GetComponent<Enemy>();
         Vector3 enemyTargetPos = targetPosition.position + randomOffset;
+
         newEnemy.gameObject.SetActive(true);
-        newEnemy.Init(enemyTargetPos, 1,20,enemyPool, money);
+        newEnemy.Init(enemyTargetPos,enemyPool, money);
     }
 }
