@@ -38,6 +38,7 @@ public class WaveController : MonoBehaviour
         waveCount = 0;
         waveView.ChangeWaveText(waveCount);
         enemySpawner.StartSpawn(curentSubwave, curentWave.timeBetweenSubwave);
+        subWaveCount++;
     }
     private void NextSubWave()
     {
@@ -62,5 +63,6 @@ public class WaveController : MonoBehaviour
         curentSubwave = curentWave.subWaves[subWaveCount];
         enemySpawner.StartSpawn(curentSubwave, curentWave.timeBetweenSubwave);
         waveView.ChangeWaveText(waveCount);
+        subWaveCount++;
     }
 }

@@ -15,10 +15,6 @@ MonoBehaviour:
   subWaves:
   - enemyPrefab: {fileID: 6440931711179571707, guid: 2146483d6b741bd4c90d331724c99c24,
       type: 3}
-    spawnInterval: 1
-    maxEnemyCount: 5
-  - enemyPrefab: {fileID: 6440931711179571707, guid: 2146483d6b741bd4c90d331724c99c24,
-      type: 3}
     spawnInterval: 2
-    maxEnemyCount: 3
-  timeBetweenSubwave: 3
+    maxEnemyCount: 5
+  timeBetweenSubwave: 5

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Wave 3
   m_EditorClassIdentifier: 
   subWaves:
-  - enemyPrefab: {fileID: 3647610342728579057, guid: 1eab5d8eab37e3944823d98071f33c19,
+  - enemyPrefab: {fileID: 6440931711179571707, guid: 2146483d6b741bd4c90d331724c99c24,
       type: 3}
     spawnInterval: 1
-    maxEnemyCount: 7
-  - enemyPrefab: {fileID: 3647610342728579057, guid: 1eab5d8eab37e3944823d98071f33c19,
+    maxEnemyCount: 10
+  - enemyPrefab: {fileID: -934140645374283688, guid: 023dfe1933e334541a30bfb4aa3562a5,
       type: 3}
-    spawnInterval: 5
+    spawnInterval: 2
     maxEnemyCount: 1
-  timeBetweenSubwave: 3
+  timeBetweenSubwave: 2

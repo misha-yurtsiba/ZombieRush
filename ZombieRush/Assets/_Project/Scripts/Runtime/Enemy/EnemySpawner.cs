@@ -16,9 +16,8 @@ public class EnemySpawner : MonoBehaviour
     private float startDelay;
 
     [Inject]
-    private void Construct(ObjectPool<Enemy> enemyPool, Money money)
+    private void Construct(Money money)
     {
-        this.enemyPool = enemyPool;
         this.money = money;
     }
 
@@ -44,7 +43,7 @@ public class EnemySpawner : MonoBehaviour
     }
     private void SpawnOneEnemy()
     {
-        Vector3 randomOffset = new Vector3(UnityEngine.Random.Range(-2f, 2f), 0.5f, 0);
+        Vector3 randomOffset = new Vector3(UnityEngine.Random.Range(-2f, 2f), 0, 0);
         Enemy newEnemy = Instantiate(subWave.enemyPrefab, spawnPosition.position + randomOffset, Quaternion.Euler(0,180,0)).GetComponent<Enemy>();
         Vector3 enemyTargetPos = targetPosition.position + randomOffset;
 

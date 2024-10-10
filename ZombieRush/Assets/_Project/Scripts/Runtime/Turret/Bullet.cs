@@ -25,12 +25,12 @@ public class Bullet : MonoBehaviour
             bulletPool.Relese(this);
         }
         else
-            transform.position = Vector3.MoveTowards(transform.position, targetPos.position, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetPos.position + new Vector3(0,0.5f,0), speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(out Enemy enemy))
+        if (other.TryGetComponent(out Enemy enemy))
         {
             enemy.TakeDamage(damage);
             GetComponent<TrailRenderer>().Clear();

@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killMoney: 20
-  movingSpeed: 0.75
-  health: 30
+  movingSpeed: 1
+  health: 20
 --- !u!136 &8821713943036118615
 CapsuleCollider:
   m_ObjectHideFlags: 0

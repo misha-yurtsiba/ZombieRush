@@ -12,7 +12,6 @@ public class GameplayInstaller : MonoInstaller
 
     [Header("Prefabs"),Space(2)]
     [SerializeField] private Turret turretPrefab;
-    [SerializeField] private Enemy enemyPrefab;
     [SerializeField] private Bullet bulletPrefab;
 
     public override void InstallBindings()
@@ -28,9 +27,8 @@ public class GameplayInstaller : MonoInstaller
         BingTurretSpawner();
 
         BindMoney();
-        BindEnemyPrefab();
-        BindEnemyFactory();
-        BindEnemyPool();
+        //BindEnemyFactory();
+        //BindEnemyPool();
         BindEnemySpawner();
 
         BindWaveController();
@@ -124,13 +122,6 @@ public class GameplayInstaller : MonoInstaller
             .Lazy();
     }
 
-    private void BindEnemyPrefab()
-    {
-        Container
-            .BindInstance(enemyPrefab)
-            .AsSingle()
-            .Lazy();
-    }
     private void BindEnemySpawner()
     {
         Container
