@@ -17,4 +17,36 @@ MonoBehaviour:
       type: 3}
     spawnInterval: 2
     maxEnemyCount: 5
+  - enemyPrefab: {fileID: 703183600463202310, guid: a3a369a1195401a4d9bba2d41fca7b4c,
+      type: 3}
+    spawnInterval: 2
+    maxEnemyCount: 5
+  - enemyPrefab: {fileID: 703183600463202310, guid: a3a369a1195401a4d9bba2d41fca7b4c,
+      type: 3}
+    spawnInterval: 2
+    maxEnemyCount: 5
+  - enemyPrefab: {fileID: 703183600463202310, guid: a3a369a1195401a4d9bba2d41fca7b4c,
+      type: 3}
+    spawnInterval: 2
+    maxEnemyCount: 5
+  - enemyPrefab: {fileID: 703183600463202310, guid: a3a369a1195401a4d9bba2d41fca7b4c,
+      type: 3}
+    spawnInterval: 2
+    maxEnemyCount: 5
+  - enemyPrefab: {fileID: 703183600463202310, guid: a3a369a1195401a4d9bba2d41fca7b4c,
+      type: 3}
+    spawnInterval: 2
+    maxEnemyCount: 5
+  - enemyPrefab: {fileID: 703183600463202310, guid: a3a369a1195401a4d9bba2d41fca7b4c,
+      type: 3}
+    spawnInterval: 2
+    maxEnemyCount: 5
+  - enemyPrefab: {fileID: 703183600463202310, guid: a3a369a1195401a4d9bba2d41fca7b4c,
+      type: 3}
+    spawnInterval: 2
+    maxEnemyCount: 5
+  - enemyPrefab: {fileID: 703183600463202310, guid: a3a369a1195401a4d9bba2d41fca7b4c,
+      type: 3}
+    spawnInterval: 2
+    maxEnemyCount: 5
   timeBetweenSubwave: 3
