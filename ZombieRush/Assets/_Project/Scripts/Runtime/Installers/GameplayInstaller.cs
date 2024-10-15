@@ -13,6 +13,7 @@ public class GameplayInstaller : MonoInstaller
     [Header("Prefabs"),Space(2)]
     [SerializeField] private Turret turretPrefab;
     [SerializeField] private Bullet bulletPrefab;
+    [SerializeField] private Rocket rocketPrefab;
 
     public override void InstallBindings()
     {
@@ -21,9 +22,13 @@ public class GameplayInstaller : MonoInstaller
 
         BindTurretPrefab();
         BindBulletPrefab();
+        BindRocketPrefab();
         BindTurretFactory();
         BindBulletFactofy();
+        BindRocketFactofy();
+
         BindBulletPool();
+        BindRocketPool();
         BingTurretSpawner();
 
         BindMoney();
@@ -90,6 +95,13 @@ public class GameplayInstaller : MonoInstaller
             .AsSingle()
             .Lazy();
     }
+    private void BindRocketPrefab()
+    {
+        Container
+            .BindInstance(rocketPrefab)
+            .AsSingle()
+            .Lazy();
+    }
     private void BindTurretFactory()
     {
         Container
@@ -103,6 +115,15 @@ public class GameplayInstaller : MonoInstaller
             .BindInterfacesAndSelfTo<ObjectPool<Bullet>>()
             .AsSingle()
             .WithArguments(5)
+            .Lazy();
+    }
+
+    private void BindRocketPool()
+    {
+        Container
+            .BindInterfacesAndSelfTo<ObjectPool<Rocket>>()
+            .AsSingle()
+            .WithArguments(3)
             .Lazy();
     }
     private void BingTurretSpawner()
@@ -121,7 +142,14 @@ public class GameplayInstaller : MonoInstaller
             .AsSingle()
             .Lazy();
     }
-
+    private void BindRocketFactofy()
+    {
+        Container
+            .Bind<GameObjectFactory<Rocket>>()
+            .To<RocketFactory>()
+            .AsSingle()
+            .Lazy();
+    }
     private void BindEnemySpawner()
     {
         Container

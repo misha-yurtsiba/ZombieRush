@@ -256,9 +256,11 @@ MonoBehaviour:
   enemySpawner: {fileID: 948322320}
   waveController: {fileID: 2031336703}
   waveView: {fileID: 958881010}
-  turretPrefab: {fileID: 4373070377357563740, guid: b2b5d27d4424170408688c2e16ebc1e5,
+  turretPrefab: {fileID: 5752033449050363834, guid: 002462ff8de427543b0e0bb4df52746e,
     type: 3}
   bulletPrefab: {fileID: 3373468760828897025, guid: 2e1e256fbb04465439a7c5d12b8f4b55,
+    type: 3}
+  rocketPrefab: {fileID: 6103057664712341264, guid: 4346b29e4e661cb42be84af189eb7246,
     type: 3}
 --- !u!1 &171004848
 GameObject:
