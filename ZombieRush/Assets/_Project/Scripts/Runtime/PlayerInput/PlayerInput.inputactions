@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "DragAndDrop",
+                    "type": "Button",
+                    "id": "9b69cae5-5215-4259-935d-9282f1dac3bb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -29,7 +38,7 @@
                     "name": "",
                     "id": "6b7ed8ee-7ef9-4f01-baea-98ac17e35b1d",
                     "path": "<Touchscreen>/Press",
-                    "interactions": "",
+                    "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "",
                     "action": "PlayerTouch",
@@ -55,6 +64,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "TouchPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f2a5fca1-b956-45bf-8bf7-cbdd6d20fae5",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DragAndDrop",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -262,6 +262,8 @@ MonoBehaviour:
     type: 3}
   rocketPrefab: {fileID: 6443386532767055863, guid: 4346b29e4e661cb42be84af189eb7246,
     type: 3}
+  explosionPrefab: {fileID: 6446441398617042355, guid: ada9e865d96a8f241af7ecdcf19c7994,
+    type: 3}
 --- !u!1 &171004848
 GameObject:
   m_ObjectHideFlags: 0
@@ -3024,6 +3026,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7715daf210e2d4eaf6513fd68c2da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectTime: 0.5
+  detectDistance: 10
 --- !u!4 &1228380689
 Transform:
   m_ObjectHideFlags: 0

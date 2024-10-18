@@ -14,6 +14,7 @@ public class GameplayInstaller : MonoInstaller
     [SerializeField] private Turret turretPrefab;
     [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private Rocket rocketPrefab;
+    [SerializeField] private Explosion explosionPrefab;
 
     public override void InstallBindings()
     {
@@ -23,13 +24,18 @@ public class GameplayInstaller : MonoInstaller
         BindTurretPrefab();
         BindBulletPrefab();
         BindRocketPrefab();
+        BindExplosionPrefab();
+
         BindTurretFactory();
         BindBulletFactofy();
         BindRocketFactofy();
+        BindExplosionFactofy();
 
         BindBulletPool();
         BindRocketPool();
+        BindExplosionPool();
         BingTurretSpawner();
+        BindTurretMover();
 
         BindMoney();
         //BindEnemyFactory();
@@ -73,6 +79,13 @@ public class GameplayInstaller : MonoInstaller
             .AsSingle()
             .NonLazy();
     }
+    private void BindTurretMover()
+    {
+        Container
+            .BindInterfacesAndSelfTo<TurretMover>()
+            .AsSingle()
+            .NonLazy();
+    }
 
     private void BindMoney()
     {
@@ -102,6 +115,13 @@ public class GameplayInstaller : MonoInstaller
             .AsSingle()
             .Lazy();
     }
+    private void BindExplosionPrefab()
+    {
+        Container
+            .BindInstance(explosionPrefab)
+            .AsSingle()
+            .Lazy();
+    }
     private void BindTurretFactory()
     {
         Container
@@ -122,6 +142,15 @@ public class GameplayInstaller : MonoInstaller
     {
         Container
             .BindInterfacesAndSelfTo<ObjectPool<Rocket>>()
+            .AsSingle()
+            .WithArguments(3)
+            .Lazy();
+    }
+
+    private void BindExplosionPool()
+    {
+        Container
+            .BindInterfacesAndSelfTo<ObjectPool<Explosion>>()
             .AsSingle()
             .WithArguments(3)
             .Lazy();
@@ -147,6 +176,14 @@ public class GameplayInstaller : MonoInstaller
         Container
             .Bind<GameObjectFactory<Rocket>>()
             .To<RocketFactory>()
+            .AsSingle()
+            .Lazy();
+    }
+    private void BindExplosionFactofy()
+    {
+        Container
+            .Bind<GameObjectFactory<Explosion>>()
+            .To<ExplosionFactory>()
             .AsSingle()
             .Lazy();
     }

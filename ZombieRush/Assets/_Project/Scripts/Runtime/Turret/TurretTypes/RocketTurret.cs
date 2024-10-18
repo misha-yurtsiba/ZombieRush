@@ -12,11 +12,13 @@ public class RocketTurret : Turret
     [SerializeField] private float blastRadius;
 
     private ObjectPool<Rocket> rocketPool;
+    private ObjectPool<Explosion> explosionPool;
 
     [Inject]
-    private void Construct(ObjectPool<Rocket> rocketPool)
+    private void Construct(ObjectPool<Rocket> rocketPool, ObjectPool<Explosion> explosionPool)
     {
         this.rocketPool = rocketPool;
+        this.explosionPool = explosionPool;
     }
 
     private void Update()
@@ -40,8 +42,9 @@ public class RocketTurret : Turret
     private void Shoot()
     {
         Rocket rocket = rocketPool.Get(bulletSpawnPoint.position);
-        rocket.transform.rotation = bulletSpawnPoint.rotation;
-        rocket.Init(targetEnemy.transform, rocketPool, 10, damage, blastRadius);
+        //rocket.transform.rotation = bulletSpawnPoint.rotation;
+        rocket.transform.LookAt(targetEnemy.transform);
+        rocket.Init(targetEnemy.transform, rocketPool,explosionPool, 10, damage, blastRadius);
 
         attackTimer = 0;
         canAttack = false;
