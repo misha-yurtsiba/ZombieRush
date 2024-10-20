@@ -5,16 +5,22 @@ using Zenject;
 public class TurretFactory : ITurretFactory
 {
     private DiContainer diContainer;
-    private Turret turretPrefab;
+    private TurretsConfig turrets;
 
-    public TurretFactory(DiContainer diContainer, Turret turretPrefab)
+    private Dictionary<int, Turret> turretsDict = new Dictionary<int, Turret>();
+
+    public TurretFactory(DiContainer diContainer, TurretsConfig turrets)
     {
         this.diContainer = diContainer;
-        this.turretPrefab = turretPrefab;
+        this.turrets = turrets;
+
+        Debug.Log(turrets);
+        foreach(Turret turret in this.turrets.turrets)
+            turretsDict.Add(turret.level, turret);
     }
 
-    public Turret CreateTurret()
+    public Turret CreateTurret(int level)
     {
-        return diContainer.InstantiatePrefab(turretPrefab,Vector3.zero,Quaternion.identity,null).GetComponent<Turret>();
+        return diContainer.InstantiatePrefab(turretsDict[level],Vector3.zero,Quaternion.identity,null).GetComponent<Turret>();
     }
 }

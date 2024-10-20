@@ -23,11 +23,7 @@ public class InputHandler : MonoBehaviour
     private Vector2 touchPosition => playerInput.Gameplay.TouchPosition.ReadValue<Vector2>();
     void Start()
     {
-        playerInput = new PlayerInput();
-        playerInput.Gameplay.Enable();
-        playerInput.Gameplay.PlayerTouch.performed += PlayerTouch;
-        playerInput.Gameplay.DragAndDrop.performed += StartTouching;
-        playerInput.Gameplay.DragAndDrop.canceled  += EndTouching;
+        
     }
 
     private void OnDisable()
@@ -36,6 +32,15 @@ public class InputHandler : MonoBehaviour
         playerInput.Gameplay.PlayerTouch.performed -= PlayerTouch;
         playerInput.Gameplay.DragAndDrop.performed -= StartTouching;
         playerInput.Gameplay.DragAndDrop.canceled -= EndTouching;
+    }
+
+    public void Init()
+    {
+        playerInput = new PlayerInput();
+        playerInput.Gameplay.Enable();
+        playerInput.Gameplay.PlayerTouch.performed += PlayerTouch;
+        playerInput.Gameplay.DragAndDrop.performed += StartTouching;
+        playerInput.Gameplay.DragAndDrop.canceled += EndTouching;
     }
     private void Update()
     {

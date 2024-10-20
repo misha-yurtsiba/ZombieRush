@@ -12,7 +12,7 @@ public class LaserTurret : Turret
     }
     private void Update()
     {
-        if ((IsEnemyInAttackRange() || IsEnemyFind()) && canAttack)
+        if (!isMoving && (IsEnemyInAttackRange() || IsEnemyFind()) && canAttack)
             Shoot();
         else
             lineRenderer.enabled = false;

@@ -6,19 +6,23 @@ using UnityEngine;
 public class TurretMover : IDisposable
 {
     private InputHandler inputHandler;
+    private ITurretFactory turretFactory;
 
     private Camera camera;
     private Turret movingTurret;
     private TurretTile startTurretTile;
+    private ParticleSystem sparks;
 
     private Plane plane;
     private Vector3 offset;
 
     private bool isDragAndDrop;
     private bool canDragAndDrop;
-    public TurretMover(InputHandler inputHandler)
+    public TurretMover(InputHandler inputHandler, ITurretFactory turretFactory, ParticleSystem sparks)
     {
         this.inputHandler = inputHandler;
+        this.turretFactory = turretFactory;
+        this.sparks = GameObject.Instantiate(sparks);
 
         inputHandler.startDragAndDrop += StartDragAndDrop;
         inputHandler.endDragAndDrop += EndtDragAndDrop;
@@ -40,10 +44,11 @@ public class TurretMover : IDisposable
         Ray ray = camera.ScreenPointToRay(touchPosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit,100) && hit.transform.TryGetComponent(out TurretTile turretTile))
+        if (Physics.Raycast(ray, out hit,100) && hit.transform.TryGetComponent(out TurretTile turretTile) && turretTile.TryGetTurret(out Turret turret))
         {
             isDragAndDrop = true;
-            movingTurret = turretTile.curentTurret;
+            movingTurret = turret;
+            movingTurret.isMoving = true;
 
             if (movingTurret == null) return;
 
@@ -77,11 +82,24 @@ public class TurretMover : IDisposable
 
         if (Physics.Raycast(ray, out hit, 100) && hit.transform.TryGetComponent(out TurretTile turretTile))
         {
-            if(turretTile.curentTurret == null)
+            if(turretTile.TryGetTurret(out Turret turret) && startTurretTile != turretTile && turret.level != 5 && turret.level == startTurretTile.curentTurret.level)
             {
+                int level = turret.level;
+                level++;
+
+                UnityEngine.Object.Destroy(startTurretTile.curentTurret.gameObject);
+                UnityEngine.Object.Destroy(turretTile.curentTurret.gameObject);
+
+                Turret newTurret = turretFactory.CreateTurret(level);
+                newTurret.transform.position = turretTile.transform.position;
+                turretTile.curentTurret = newTurret;
+
+                sparks.gameObject.SetActive(true);
+                sparks.transform.position = newTurret.transform.position;
+                sparks.Play();
+
+                newTurret.isMoving = false;
                 isDragAndDrop = false;
-                movingTurret.transform.position = turretTile.transform.position;
-                turretTile.curentTurret = movingTurret;
                 movingTurret = null;
                 startTurretTile.curentTurret = null;
                 return;
@@ -89,6 +107,7 @@ public class TurretMover : IDisposable
             }
         }
 
+        startTurretTile.curentTurret.isMoving = false;
         movingTurret.transform.position = startTurretTile.transform.position;
         movingTurret = null;
         isDragAndDrop = false;

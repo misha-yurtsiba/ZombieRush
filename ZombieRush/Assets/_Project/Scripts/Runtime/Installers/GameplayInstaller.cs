@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 using Zenject;
 
 public class GameplayInstaller : MonoInstaller
@@ -11,17 +12,18 @@ public class GameplayInstaller : MonoInstaller
     [SerializeField] private WaveView waveView;
 
     [Header("Prefabs"),Space(2)]
-    [SerializeField] private Turret turretPrefab;
+    [SerializeField] private List<Turret> turrets;
     [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private Rocket rocketPrefab;
     [SerializeField] private Explosion explosionPrefab;
+    [SerializeField] private ParticleSystem sparks;
 
     public override void InstallBindings()
     {
         BindTurretTiles();
         BindInputHandler();
 
-        BindTurretPrefab();
+        BindTurretsConfig();
         BindBulletPrefab();
         BindRocketPrefab();
         BindExplosionPrefab();
@@ -77,13 +79,14 @@ public class GameplayInstaller : MonoInstaller
         Container
             .BindInstance(inputHandler)
             .AsSingle()
-            .NonLazy();
+            .Lazy();
     }
     private void BindTurretMover()
     {
         Container
             .BindInterfacesAndSelfTo<TurretMover>()
             .AsSingle()
+            .WithArguments(sparks)
             .NonLazy();
     }
 
@@ -91,13 +94,6 @@ public class GameplayInstaller : MonoInstaller
     {
         Container
             .BindInterfacesAndSelfTo<Money>()
-            .AsSingle()
-            .Lazy();
-    }
-    private void BindTurretPrefab()
-    {
-        Container
-            .BindInstance(turretPrefab)
             .AsSingle()
             .Lazy();
     }
@@ -121,6 +117,17 @@ public class GameplayInstaller : MonoInstaller
             .BindInstance(explosionPrefab)
             .AsSingle()
             .Lazy();
+    }
+
+    private void BindTurretsConfig()
+    {
+        TurretsConfig turretsConfig = new TurretsConfig();
+        turretsConfig.turrets = turrets;
+
+        Container
+            .BindInstance(turretsConfig)
+            .AsSingle()
+            .NonLazy();
     }
     private void BindTurretFactory()
     {

@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c3f91a21bc55f4a9c25c4dc2929eee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killMoney: 50
+  killMoney: 100
   movingSpeed: 0.75
   health: 100
 --- !u!136 &1893049417802797385

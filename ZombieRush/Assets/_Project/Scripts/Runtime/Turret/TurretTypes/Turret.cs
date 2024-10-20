@@ -5,6 +5,8 @@ using Zenject;
 
 public abstract class Turret : MonoBehaviour
 {
+    public bool isMoving;
+
     [SerializeField] protected Transform bulletSpawnPoint;
     [SerializeField] protected Transform turretObj;
     [SerializeField] protected LayerMask enemyLayerMask;
@@ -16,11 +18,11 @@ public abstract class Turret : MonoBehaviour
     protected Enemy targetEnemy;
 
     protected float attackTimer;
-    protected int level;
     protected bool canAttack;
 
     private Quaternion targetRotation;
     private float rotateTimer;
+    [field:SerializeField] public int level { get; private set; }
     protected void Update()
     {
         RotateTurret();

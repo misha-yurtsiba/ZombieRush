@@ -31,7 +31,7 @@ public class RocketTurret : Turret
         else
             canAttack = true;
 
-        if ((IsEnemyInAttackRange() || IsEnemyFind()) && canAttack)
+        if (!isMoving && (IsEnemyInAttackRange() || IsEnemyFind()) && canAttack)
         {
             Shoot();
         }

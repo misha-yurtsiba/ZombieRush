@@ -1,4 +1,4 @@
 ﻿public interface ITurretFactory
 {
-    public Turret CreateTurret();
+    public Turret CreateTurret(int level);
 }

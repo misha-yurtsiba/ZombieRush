@@ -11,4 +11,11 @@ public class TurretTile : MonoBehaviour
     {
         TuretTileId = id;
     }
+
+    public bool TryGetTurret(out Turret turret)
+    {
+        turret = curentTurret;
+
+        return (curentTurret == null) ? false : true;
+    }
 }

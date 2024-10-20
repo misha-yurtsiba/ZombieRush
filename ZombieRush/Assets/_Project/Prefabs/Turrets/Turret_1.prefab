@@ -135,6 +135,7 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  <level>k__BackingField: 1
   attackRange: 7.5
   rotationSpead: 15
   turretPrice: 80
