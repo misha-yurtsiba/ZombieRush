@@ -477,15 +477,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 801410cf76f21c94a8c63da931bcfafa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMoving: 0
   bulletSpawnPoint: {fileID: 4799182943123490421}
   turretObj: {fileID: 1322855331044808432}
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  <level>k__BackingField: 3
   attackRange: 7.5
   rotationSpead: 15
   turretPrice: 100
+  <level>k__BackingField: 3
   damagePerSecond: 10
 --- !u!120 &8634182501851294992
 LineRenderer:
@@ -495,7 +496,7 @@ LineRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4530004039387330875}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -530,7 +531,7 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 1, y: 1, z: 1}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
