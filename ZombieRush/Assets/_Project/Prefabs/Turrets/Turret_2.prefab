@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 3599619302283989008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7995215567208551072}
@@ -129,15 +129,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d646183a4d35514da7edc43c89eb63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMoving: 0
   bulletSpawnPoint: {fileID: 0}
   turretObj: {fileID: 6806440248775531146}
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  <level>k__BackingField: 2
   attackRange: 7
   rotationSpead: 15
   turretPrice: 100
+  <level>k__BackingField: 2
   bulletPrefab: {fileID: 3373468760828897025, guid: 2e1e256fbb04465439a7c5d12b8f4b55,
     type: 3}
   attackRate: 0.5

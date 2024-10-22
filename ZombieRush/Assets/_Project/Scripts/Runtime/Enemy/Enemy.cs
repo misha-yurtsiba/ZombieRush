@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int killMoney;
     [SerializeField] private float movingSpeed;
     [SerializeField] private float health;
+    [SerializeField] private float damage;
 
     private ObjectPool<Enemy> enemyPool;
     private Money money;
@@ -32,6 +33,15 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             money.AddMoney(killMoney);
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.TryGetComponent(out PlayerHealth playerHealth))
+        {
+            playerHealth.TakeDamage(damage);
             Destroy(gameObject);
         }
     }

@@ -34,7 +34,7 @@ public class TurretSpawner
 
         foreach(TurretTile tile in emptyTurretTiles)
             if(tile.curentTurret == null)
-                tile.GetComponent<MeshRenderer>().material.color = Color.green;
+                //tile.GetComponent<MeshRenderer>().material.color = Color.green;
 
         isSpawning = true;
     }
@@ -49,7 +49,7 @@ public class TurretSpawner
             Turret newTurret = turretFactory.CreateTurret(1);
             newTurret.transform.position = turretTile.transform.position + new Vector3(0,0,0);
             turretTile.curentTurret = newTurret;
-            turretTile.GetComponent<MeshRenderer>().material.color = Color.yellow;
+            //turretTile.GetComponent<MeshRenderer>().material.color = Color.yellow;
             money.Buy(turretPrice);
 
             //turretPrice += (int)Mathf.Round(turretPrice * 0.1f / 10) * 10;
@@ -58,7 +58,7 @@ public class TurretSpawner
 
         foreach (TurretTile tile in emptyTurretTiles)
             if (tile.curentTurret == null)
-                tile.GetComponent<MeshRenderer>().material.color = Color.yellow;
+                //tile.GetComponent<MeshRenderer>().material.color = Color.yellow;
 
         inputHandler.playerTouched -= SpawnTurret;
         isSpawning = false;
