@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Zenject;
 
 public class InputHandler : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class InputHandler : MonoBehaviour
     public Action<Vector2> endDragAndDrop;
     public Action<Vector2> dragAndDrop;
 
+    private IGameOver gameOver;
     private PlayerInput playerInput;
     private Vector2 startPosition;
 
@@ -21,17 +23,20 @@ public class InputHandler : MonoBehaviour
     private bool isTouching;
     private bool isDragAndDrop;
     private Vector2 touchPosition => playerInput.Gameplay.TouchPosition.ReadValue<Vector2>();
-    void Start()
+
+    [Inject]
+    private void Construct(IGameOver gameOver)
     {
-        
+        this.gameOver = gameOver;
+    }
+    private void OnEnable()
+    {
+        gameOver.gameOver += PlayerLose;
     }
 
     private void OnDisable()
     {
-        playerInput.Gameplay.Disable();
-        playerInput.Gameplay.PlayerTouch.performed -= PlayerTouch;
-        playerInput.Gameplay.DragAndDrop.performed -= StartTouching;
-        playerInput.Gameplay.DragAndDrop.canceled -= EndTouching;
+        gameOver.gameOver -= PlayerLose;
     }
 
     public void Init()
@@ -41,6 +46,14 @@ public class InputHandler : MonoBehaviour
         playerInput.Gameplay.PlayerTouch.performed += PlayerTouch;
         playerInput.Gameplay.DragAndDrop.performed += StartTouching;
         playerInput.Gameplay.DragAndDrop.canceled += EndTouching;
+    }
+
+    private void PlayerLose()
+    {
+        playerInput.Gameplay.Disable();
+        playerInput.Gameplay.PlayerTouch.performed -= PlayerTouch;
+        playerInput.Gameplay.DragAndDrop.performed -= StartTouching;
+        playerInput.Gameplay.DragAndDrop.canceled -= EndTouching;
     }
     private void Update()
     {

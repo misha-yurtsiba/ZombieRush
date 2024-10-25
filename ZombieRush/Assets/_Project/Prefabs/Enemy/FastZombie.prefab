@@ -181,7 +181,7 @@ MonoBehaviour:
   killMoney: 50
   movingSpeed: 1.5
   health: 25
-  damage: 10
+  damage: 50
 --- !u!1 &984056064737484743
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,9 @@ public class GameplayInstaller : MonoInstaller
     [SerializeField] private EnemySpawner enemySpawner;
     [SerializeField] private WaveController waveController;
     [SerializeField] private WaveView waveView;
+    [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private PlayerHealthView playerHealthView;
+    [SerializeField] private GameOverView gameOverView;
 
     [Header("Prefabs"),Space(2)]
     [SerializeField] private List<Turret> turrets;
@@ -21,6 +24,11 @@ public class GameplayInstaller : MonoInstaller
     public override void InstallBindings()
     {
         BindTurretTiles();
+
+        BindGameOverView();
+        BindGameOwer();
+        BindRestartGame();
+
         BindInputHandler();
 
         BindTurretsConfig();
@@ -46,6 +54,8 @@ public class GameplayInstaller : MonoInstaller
 
         BindWaveController();
         BindWaveView();
+        BindPlayerHealthView();
+        BindPlayerHealth();
 
         BindGameUI();
         BindStartGame();
@@ -80,6 +90,28 @@ public class GameplayInstaller : MonoInstaller
             .BindInstance(inputHandler)
             .AsSingle()
             .Lazy();
+    }
+    private void BindGameOverView()
+    {
+        Container
+            .BindInstance(gameOverView)
+            .AsSingle()
+            .Lazy();
+    }
+    private void BindGameOwer()
+    {
+        Container
+            .BindInterfacesAndSelfTo<GameOver>()
+            .AsSingle()
+            .NonLazy();
+    }
+
+    private void BindRestartGame()
+    {
+        Container
+            .BindInterfacesAndSelfTo<RestartGame>()
+            .AsSingle()
+            .NonLazy();
     }
     private void BindTurretMover()
     {
@@ -233,5 +265,20 @@ public class GameplayInstaller : MonoInstaller
             .BindInstance(waveView)
             .AsSingle()
             .NonLazy();
+    }
+    private void BindPlayerHealthView()
+    {
+        Container
+            .BindInstance(playerHealthView)
+            .AsSingle()
+            .Lazy();
+    }
+
+    private void BindPlayerHealth()
+    {
+        Container
+            .BindInstance(playerHealth)
+            .AsSingle()
+            .Lazy();
     }
 }

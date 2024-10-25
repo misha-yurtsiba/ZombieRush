@@ -6,7 +6,7 @@ using UnityEngine;
 public class TurretMover : IDisposable
 {
     private InputHandler inputHandler;
-    private ITurretFactory turretFactory;
+    private TurretSpawner turretSpawner;
 
     private Camera camera;
     private Turret movingTurret;
@@ -18,12 +18,13 @@ public class TurretMover : IDisposable
 
     private bool isDragAndDrop;
     private bool canDragAndDrop;
-    public TurretMover(InputHandler inputHandler, ITurretFactory turretFactory, ParticleSystem sparks)
+    public TurretMover(InputHandler inputHandler, TurretSpawner turretSpawner, ParticleSystem sparks)
     {
         this.inputHandler = inputHandler;
-        this.turretFactory = turretFactory;
+        this.turretSpawner = turretSpawner;
         this.sparks = GameObject.Instantiate(sparks);
 
+        sparks.gameObject.SetActive(false);
         inputHandler.startDragAndDrop += StartDragAndDrop;
         inputHandler.endDragAndDrop += EndtDragAndDrop;
         inputHandler.dragAndDrop += DragAndDropUpdate;
@@ -87,16 +88,11 @@ public class TurretMover : IDisposable
                 int level = turret.level;
                 level++;
 
-                UnityEngine.Object.Destroy(startTurretTile.curentTurret.gameObject);
-                UnityEngine.Object.Destroy(turretTile.curentTurret.gameObject);
+                turretSpawner.RemoveTurret(startTurretTile.curentTurret);
+                turretSpawner.RemoveTurret(turretTile.curentTurret);
 
-                Turret newTurret = turretFactory.CreateTurret(level);
-                newTurret.transform.position = turretTile.transform.position;
-                turretTile.curentTurret = newTurret;
-
-                sparks.gameObject.SetActive(true);
-                sparks.transform.position = newTurret.transform.position;
-                sparks.Play();
+                Turret newTurret = turretSpawner.GetOneTurret(level, turretTile);
+                PlaySparks(newTurret);
 
                 newTurret.isMoving = false;
                 isDragAndDrop = false;
@@ -111,6 +107,13 @@ public class TurretMover : IDisposable
         movingTurret.transform.position = startTurretTile.transform.position;
         movingTurret = null;
         isDragAndDrop = false;
+    }
+
+    private void PlaySparks(Turret newTurret)
+    {
+        sparks.gameObject.SetActive(true);
+        sparks.transform.position = newTurret.transform.position;
+        sparks.Play();
     }
 }
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,23 +12,28 @@ public class WaveController : MonoBehaviour
     private SubWave curentSubwave;
     private EnemySpawner enemySpawner;
     private WaveView waveView;
+    private GameOver gameOver;
 
     private int subWaveCount;
-    private int waveCount;
+
+    public int waveCount { get; private set; }  
 
     [Inject]
-    private void Construct(EnemySpawner enemySpawner, WaveView waveView)
+    private void Construct(EnemySpawner enemySpawner, WaveView waveView, GameOver gameOver)
     {
         this.enemySpawner = enemySpawner;
         this.waveView = waveView;
+        this.gameOver = gameOver;
     }
     private void OnEnable()
     {
         enemySpawner.endSpawnSubWave += NextSubWave;
+        gameOver.gameOver += GameOver;
     }
     private void OnDisable()
     {
         enemySpawner.endSpawnSubWave -= NextSubWave;
+        gameOver.gameOver -= GameOver;
     }
 
     public void StartGame()
@@ -64,5 +70,10 @@ public class WaveController : MonoBehaviour
         enemySpawner.StartSpawn(curentSubwave, curentWave.timeBetweenSubwave);
         waveView.ChangeWaveText(waveCount);
         subWaveCount++;
+    }
+
+    private void GameOver()
+    {
+        gameOver.SetCurentWave(waveCount);
     }
 }

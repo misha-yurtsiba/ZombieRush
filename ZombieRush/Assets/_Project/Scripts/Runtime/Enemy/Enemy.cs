@@ -1,15 +1,19 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
 public class Enemy : MonoBehaviour
 {
+
     [Header("Enemy stats")]
     [SerializeField] private int killMoney;
     [SerializeField] private float movingSpeed;
     [SerializeField] private float health;
     [SerializeField] private float damage;
+
+    public Action<Enemy> enemyDestroyed;
 
     private ObjectPool<Enemy> enemyPool;
     private Money money;
@@ -33,7 +37,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             money.AddMoney(killMoney);
-            Destroy(gameObject);
+            enemyDestroyed?.Invoke(this);
         }
     }
 
@@ -41,8 +45,8 @@ public class Enemy : MonoBehaviour
     {
         if(other.TryGetComponent(out PlayerHealth playerHealth))
         {
-            playerHealth.TakeDamage(damage);
-            Destroy(gameObject);
+            playerHealth.TakeDamage(damage,transform.position);
+            enemyDestroyed?.Invoke(this);
         }
     }
 }

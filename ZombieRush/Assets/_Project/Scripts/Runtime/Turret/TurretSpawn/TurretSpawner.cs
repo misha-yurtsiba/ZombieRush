@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretSpawner
+public class TurretSpawner : IDisposable
 {
     public Action<int> turretSpawned;
 
@@ -11,18 +11,29 @@ public class TurretSpawner
     private InputHandler inputHandler;
     private TurretTiles turretTiles;
     private Money money;
+
+    private List<Turret> turretsList = new List<Turret>();
     private ITurretFactory turretFactory;
+    private IGameOver gameOver;
     private IEnumerable<TurretTile> emptyTurretTiles;
 
     public bool isSpawning { get; private set; }
-    public TurretSpawner(InputHandler inputHandler, TurretTiles turretTiles, ITurretFactory turretFactory, Money money)
+    public TurretSpawner(InputHandler inputHandler, TurretTiles turretTiles, ITurretFactory turretFactory, IGameOver gameOver, Money money)
     {
         this.inputHandler = inputHandler;
         this.turretTiles = turretTiles;
         this.turretFactory = turretFactory;
         this.money = money;
+        this.gameOver = gameOver;
 
         isSpawning = false;
+
+        gameOver.gameOver += RemoveAllTurret;
+    }
+
+    public void Dispose()
+    {
+        gameOver.gameOver -= RemoveAllTurret;
     }
 
     public void BuyTurret()
@@ -31,10 +42,6 @@ public class TurretSpawner
 
         inputHandler.playerTouched += SpawnTurret;
         emptyTurretTiles = turretTiles.GetTuretTiles();
-
-        foreach(TurretTile tile in emptyTurretTiles)
-            if(tile.curentTurret == null)
-                //tile.GetComponent<MeshRenderer>().material.color = Color.green;
 
         isSpawning = true;
     }
@@ -46,10 +53,7 @@ public class TurretSpawner
 
         if (Physics.Raycast(ray, out hit) && hit.transform.TryGetComponent(out TurretTile turretTile) && turretTile.curentTurret == null)
         {
-            Turret newTurret = turretFactory.CreateTurret(1);
-            newTurret.transform.position = turretTile.transform.position + new Vector3(0,0,0);
-            turretTile.curentTurret = newTurret;
-            //turretTile.GetComponent<MeshRenderer>().material.color = Color.yellow;
+            Turret newTurret = GetOneTurret(1, turretTile);
             money.Buy(turretPrice);
 
             //turretPrice += (int)Mathf.Round(turretPrice * 0.1f / 10) * 10;
@@ -58,9 +62,32 @@ public class TurretSpawner
 
         foreach (TurretTile tile in emptyTurretTiles)
             if (tile.curentTurret == null)
-                //tile.GetComponent<MeshRenderer>().material.color = Color.yellow;
 
         inputHandler.playerTouched -= SpawnTurret;
         isSpawning = false;
+    }
+
+    public Turret GetOneTurret(int level,TurretTile turretTile)
+    {
+        Turret newTurret = turretFactory.CreateTurret(level);
+        newTurret.transform.position = turretTile.transform.position + new Vector3(0, 0, 0);
+        turretTile.curentTurret = newTurret;
+        turretsList.Add(newTurret);
+
+        return newTurret;
+    }
+
+    public void RemoveTurret(Turret turret)
+    {
+        turretsList.Remove(turret);
+        UnityEngine.Object.Destroy(turret.gameObject);
+    }
+
+    private void RemoveAllTurret()
+    {
+        foreach (Turret turret in turretsList)
+            UnityEngine.Object.Destroy(turret.gameObject);
+
+        turretsList.Clear();
     }
 }
