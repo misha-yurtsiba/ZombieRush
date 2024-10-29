@@ -12,6 +12,8 @@ public class LaserTurret : Turret
     }
     private void Update()
     {
+        if (gamePaused) return;
+
         if (!isMoving && (IsEnemyInAttackRange() || IsEnemyFind()) && canAttack)
             Shoot();
         else

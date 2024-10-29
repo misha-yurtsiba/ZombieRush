@@ -21,6 +21,8 @@ public class SingleTurret : Turret
 
     protected void Update()
     {
+        if (gamePaused) return;
+
         if (attackTimer <= attackRate)
         {
             canAttack = false;

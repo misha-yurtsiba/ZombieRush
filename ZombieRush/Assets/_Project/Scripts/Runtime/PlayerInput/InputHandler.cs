@@ -15,8 +15,9 @@ public class InputHandler : MonoBehaviour
     public Action<Vector2> endDragAndDrop;
     public Action<Vector2> dragAndDrop;
 
-    private IGameOver gameOver;
     private PlayerInput playerInput;
+    private IGameOver gameOver;
+    private IPause pauseGame;
     private Vector2 startPosition;
 
     private float timer;
@@ -25,18 +26,21 @@ public class InputHandler : MonoBehaviour
     private Vector2 touchPosition => playerInput.Gameplay.TouchPosition.ReadValue<Vector2>();
 
     [Inject]
-    private void Construct(IGameOver gameOver)
+    private void Construct(IGameOver gameOver, IPause pauseGame)
     {
         this.gameOver = gameOver;
+        this.pauseGame = pauseGame;
     }
     private void OnEnable()
     {
         gameOver.gameOver += PlayerLose;
+        pauseGame.pause += Pause;
     }
 
     private void OnDisable()
     {
         gameOver.gameOver -= PlayerLose;
+        pauseGame.pause -= Pause;
     }
 
     public void Init()
@@ -87,5 +91,13 @@ public class InputHandler : MonoBehaviour
         isTouching = false;
         isDragAndDrop = false;
         endDragAndDrop?.Invoke(touchPosition);
+    }
+
+    private void Pause(bool isPaused)
+    {
+        if(isPaused)
+            playerInput.Gameplay.Disable();
+        else
+            playerInput.Gameplay.Enable();
     }
 }

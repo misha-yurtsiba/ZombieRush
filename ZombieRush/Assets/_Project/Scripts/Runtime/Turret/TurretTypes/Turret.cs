@@ -19,10 +19,23 @@ public abstract class Turret : MonoBehaviour
 
     protected float attackTimer;
     protected bool canAttack;
+    protected bool gamePaused;
 
+    private IPause pauseGame;
     private Quaternion targetRotation;
     private float rotateTimer;
     [field:SerializeField] public int level { get; private set; }
+
+    [Inject]
+    private void Construct(IPause pauseGame)
+    {
+        this.pauseGame = pauseGame;
+
+        gamePaused = false;
+    }
+    
+    private void OnEnable() => pauseGame.pause += IsGamePused;
+    private void OnDisable() => pauseGame.pause -= IsGamePused;
     protected void Update()
     {
         RotateTurret();
@@ -72,7 +85,7 @@ public abstract class Turret : MonoBehaviour
 
     private void RotateTurret()
     {
-        if (targetEnemy == null) return;
+        if ((targetEnemy == null) || gamePaused) return;
 
         Vector3 dir = targetEnemy.transform.position - turretObj.position;
 
@@ -83,5 +96,10 @@ public abstract class Turret : MonoBehaviour
             rotateTimer += Time.deltaTime;
         else
             canAttack = true;
+    }
+
+    private void IsGamePused(bool isPaused)
+    {
+        gamePaused = isPaused;
     }
 }

@@ -1,24 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class Bullet : MonoBehaviour
 {
     private Transform targetPos;
     private ObjectPool<Bullet> bulletPool;
+    private TrailRenderer trailRenderer;
+    private IPause pauseGame;
     private float speed;
     private float damage;
+    private bool canMoving;
 
+
+    [Inject]
+    private void Construct(IPause pauseGame)
+    {
+        this.pauseGame = pauseGame;
+
+        trailRenderer = GetComponent<TrailRenderer>();
+    }
+    private void OnEnable() => pauseGame.pause += CanBulletMoving;
+    private void OnDisable() => pauseGame.pause -= CanBulletMoving;
     public void Init(Transform targetPos, ObjectPool<Bullet> bulletPool, float speed, float damage)
     {
         this.targetPos = targetPos; 
         this.bulletPool = bulletPool;
         this.speed = speed;
         this.damage = damage;
+
+        canMoving = true;
     }
 
     private void Update()
     {
+        if (!canMoving) return;
+
         if (targetPos == null)
         {
             GetComponent<TrailRenderer>().Clear();
@@ -33,8 +51,22 @@ public class Bullet : MonoBehaviour
         if (other.TryGetComponent(out Enemy enemy))
         {
             enemy.TakeDamage(damage);
-            GetComponent<TrailRenderer>().Clear();
+            trailRenderer.Clear();
             bulletPool.Relese(this);
+        }
+    }
+
+    private void CanBulletMoving(bool isGamePaused)
+    {
+        if (isGamePaused)
+        {
+            canMoving = false;
+            
+        }
+        else
+        {
+            canMoving = true;
+            
         }
     }
 }

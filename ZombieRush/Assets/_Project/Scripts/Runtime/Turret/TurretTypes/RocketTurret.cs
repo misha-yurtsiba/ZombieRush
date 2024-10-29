@@ -23,6 +23,8 @@ public class RocketTurret : Turret
 
     private void Update()
     {
+        if (gamePaused) return;
+
         if (attackTimer <= attackRate)
         {
             canAttack = false;
