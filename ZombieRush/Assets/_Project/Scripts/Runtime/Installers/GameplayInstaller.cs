@@ -23,12 +23,13 @@ public class GameplayInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
-        BindTurretTiles();
 
         BindRestartGame();
         BindGameOverView();
         BindGameOwer();
         BindPauseGame();
+
+        BindSaveHandler();
 
         BindInputHandler();
 
@@ -47,6 +48,7 @@ public class GameplayInstaller : MonoInstaller
         BindExplosionPool();
         BingTurretSpawner();
         BindTurretMover();
+        BindTurretTiles();
 
         BindMoney();
         //BindEnemyFactory();
@@ -119,6 +121,13 @@ public class GameplayInstaller : MonoInstaller
     {
         Container
             .BindInterfacesAndSelfTo<PauseGame>()
+            .AsSingle()
+            .Lazy();
+    }
+    private void BindSaveHandler()
+    {
+        Container
+            .BindInterfacesAndSelfTo<SaveHandler>()
             .AsSingle()
             .Lazy();
     }

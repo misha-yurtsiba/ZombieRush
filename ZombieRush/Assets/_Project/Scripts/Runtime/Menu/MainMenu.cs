@@ -6,4 +6,5 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public Button newGameButton;
+    public Button continueGameButton;
 }

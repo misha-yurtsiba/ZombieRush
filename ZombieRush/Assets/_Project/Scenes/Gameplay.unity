@@ -8951,6 +8951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newGameButton: {fileID: 353052184}
+  continueGameButton: {fileID: 271094143}
 --- !u!1001 &1602228724
 PrefabInstance:
   m_ObjectHideFlags: 0

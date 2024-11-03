@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class TurretTiles : MonoBehaviour
 {
     private TurretTile[] turretTiles;
-
     public void SetTurettTiles()
     {
         turretTiles = GetComponentsInChildren<TurretTile>();
@@ -15,7 +15,8 @@ public class TurretTiles : MonoBehaviour
             turretTiles[i].Init(i);
         }
     }
-    public IEnumerable<TurretTile> GetTuretTiles()
+
+    public TurretTile[] GetTuretTiles()
     {
         return turretTiles;
     }

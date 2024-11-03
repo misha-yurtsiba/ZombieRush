@@ -15,8 +15,8 @@ public class PlayerHealth : MonoBehaviour
     private PlayerHealthView healthView;
     private GameOver gameOver;
 
-    private float curentHealth;
     private bool isLose;
+    public float curentHealth { get; private set; }
 
     [Inject]
     private void Construct(PlayerHealthView healthView, GameOver gameOver)

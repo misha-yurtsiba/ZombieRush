@@ -65,13 +65,13 @@ public class TurretSpawner : IDisposable
         }
 
         foreach (TurretTile tile in emptyTurretTiles)
-                tile.SetActiveBlinking(false);
+            tile.SetActiveBlinking(false);
 
         inputHandler.playerTouched -= SpawnTurret;
         isSpawning = false;
     }
 
-    public Turret GetOneTurret(int level,TurretTile turretTile)
+    public Turret GetOneTurret(int level, TurretTile turretTile)
     {
         Turret newTurret = turretFactory.CreateTurret(level);
         newTurret.transform.position = turretTile.transform.position + new Vector3(0, 0, 0);
@@ -93,5 +93,18 @@ public class TurretSpawner : IDisposable
             UnityEngine.Object.Destroy(turret.gameObject);
 
         turretsList.Clear();
+    }
+
+    public void LoadTurrets(List<TurretTileData> turretTileDatas)
+    {
+        TurretTile[] tiles = turretTiles.GetTuretTiles();
+
+        foreach (TurretTileData tileData in turretTileDatas)
+        {
+            if (tileData.turretLevel == 0) continue;
+
+            Turret newTurret = GetOneTurret(tileData.turretLevel, tiles[tileData.turretTileId]);
+        }
+
     }
 }

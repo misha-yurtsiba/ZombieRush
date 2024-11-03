@@ -12,19 +12,22 @@ public class GameUI : MonoBehaviour
     [SerializeField] private PauseMenuView pauseMenuView;
 
     private StartGame startGame;
+    private SaveHandler saveHandler;
     private IRestart restartGame;
     private IGameOver gameOver;
     
     [Inject]
-    private void Construct(StartGame startGame, IRestart restartGame, IGameOver gameOver)
+    private void Construct(StartGame startGame, SaveHandler saveHandler, IRestart restartGame, IGameOver gameOver)
     {
         this.startGame = startGame;
+        this.saveHandler = saveHandler;
         this.restartGame = restartGame;
         this.gameOver = gameOver;
     }
     private void Start()
     {
         mainMenu.newGameButton.onClick.AddListener(StartNewGame);
+        mainMenu.continueGameButton.onClick.AddListener(ContinueGame);
         gameOverView.exitButton.onClick.AddListener(BackToMenu);
         pauseMenuView.exitButton.onClick.AddListener(BackToMenu);
     }
@@ -53,6 +56,11 @@ public class GameUI : MonoBehaviour
         startGame.StartGameplay();
     }
 
+    private void ContinueGame()
+    {
+        StartNewGame();
+        saveHandler.LoadGame();
+    }
     private void RestartGame()
     {
         startGame.ExitGame();
@@ -71,5 +79,6 @@ public class GameUI : MonoBehaviour
         turretShopView.gameObject.SetActive(false);
         moneyView.gameObject.SetActive(false);
         gameOverView.DisactiveLosePanel();
+        saveHandler.SaveGame();
     }
 }
