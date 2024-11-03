@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour, IPauseble
 {
     private Transform targetPos;
     private ObjectPool<Bullet> bulletPool;
@@ -21,8 +21,8 @@ public class Bullet : MonoBehaviour
 
         trailRenderer = GetComponent<TrailRenderer>();
     }
-    private void OnEnable() => pauseGame.pause += CanBulletMoving;
-    private void OnDisable() => pauseGame.pause -= CanBulletMoving;
+    private void OnEnable() => pauseGame.pause += IsGamePaused;
+    private void OnDisable() => pauseGame.pause -= IsGamePaused;
     public void Init(Transform targetPos, ObjectPool<Bullet> bulletPool, float speed, float damage)
     {
         this.targetPos = targetPos; 
@@ -56,17 +56,17 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    private void CanBulletMoving(bool isGamePaused)
+    public void IsGamePaused(bool isGamePaused)
     {
         if (isGamePaused)
         {
             canMoving = false;
-            
+
         }
         else
         {
             canMoving = true;
-            
+
         }
     }
 }

@@ -17,29 +17,38 @@ public class EnemySpawner : MonoBehaviour
     private List<Enemy> enemyList = new List<Enemy>();
     private Money money;
     private IGameOver gameOver;
+    private IPause gamePause;
+    private IRestart restartGame;
+
     private float startDelay;
+    private bool canSpawn;
 
     [Inject]
-    private void Construct(Money money, IGameOver gameOver)
+    private void Construct(Money money, IGameOver gameOver, IPause gamePause, IRestart restartGame)
     {
         this.money = money;
         this.gameOver = gameOver;
+        this.gamePause = gamePause;
+        this.restartGame = restartGame;
     }
 
     private void OnEnable()
     {
         gameOver.gameOver += GameOver;
+        gamePause.pause += IsGamePaused;
     }
 
     private void OnDisable()
     {
         gameOver.gameOver -= GameOver;
+        gamePause.pause -= IsGamePaused;
     }
     public void StartSpawn(SubWave newSubWave,int newStartDelay)
     {
         subWave = newSubWave;
         startDelay = newStartDelay;
         coroutine = StartCoroutine(SpawnCoroutine());
+        canSpawn = true;
     }
 
 
@@ -51,9 +60,16 @@ public class EnemySpawner : MonoBehaviour
         {
             if (gameOver.isGameOver) yield break;
 
-            SpawnOneEnemy();
-            spawnedEnemys++;
-            yield return new WaitForSeconds(subWave.spawnInterval);
+            if (!canSpawn)
+            {
+                yield return null;
+            }
+            else
+            {
+                SpawnOneEnemy();
+                spawnedEnemys++;
+                yield return new WaitForSeconds(subWave.spawnInterval);
+            }
         }
         endSpawnSubWave?.Invoke();
     }
@@ -77,6 +93,18 @@ public class EnemySpawner : MonoBehaviour
 
     }
 
+    public void DestroyAllEnemy()
+    {
+        StopCoroutine(coroutine);
+
+        foreach (Enemy enemy in enemyList)
+        {
+            enemy.enemyDestroyed -= DestoyEnemy;
+            Destroy(enemy.gameObject);
+        }
+
+        enemyList.Clear();
+    }
     private IEnumerator DestroyAllEnemyCoroutine()
     {
         yield return new WaitForSeconds(3);
@@ -96,5 +124,13 @@ public class EnemySpawner : MonoBehaviour
         enemy.enemyDestroyed -= DestoyEnemy;
         enemyList.Remove(enemy);
         Destroy(enemy.gameObject);
+    }
+
+    private void IsGamePaused(bool isPaused)
+    {
+        canSpawn = !isPaused;
+
+        foreach (Enemy enemy in enemyList)
+            enemy.CanMoving(!isPaused);
     }
 }

@@ -98,7 +98,7 @@ public abstract class Turret : MonoBehaviour
             canAttack = true;
     }
 
-    private void IsGamePused(bool isPaused)
+    protected virtual void IsGamePused(bool isPaused)
     {
         gamePaused = isPaused;
     }

@@ -9,13 +9,14 @@ public class GameUI : MonoBehaviour
     [SerializeField] private TurretShopView turretShopView;
     [SerializeField] private MoneyView moneyView;
     [SerializeField] private GameOverView gameOverView;
+    [SerializeField] private PauseMenuView pauseMenuView;
 
-    private IStartGame startGame;
+    private StartGame startGame;
     private IRestart restartGame;
     private IGameOver gameOver;
     
     [Inject]
-    private void Construct(IStartGame startGame, IRestart restartGame, IGameOver gameOver)
+    private void Construct(StartGame startGame, IRestart restartGame, IGameOver gameOver)
     {
         this.startGame = startGame;
         this.restartGame = restartGame;
@@ -25,18 +26,19 @@ public class GameUI : MonoBehaviour
     {
         mainMenu.newGameButton.onClick.AddListener(StartNewGame);
         gameOverView.exitButton.onClick.AddListener(BackToMenu);
+        pauseMenuView.exitButton.onClick.AddListener(BackToMenu);
     }
 
     private void OnEnable()
     {
         gameOver.gameOver += LoseGame;
-        restartGame.restart += StartNewGame;
+        restartGame.restart += RestartGame;
     }
 
     private void OnDisable()
     {
         gameOver.gameOver -= LoseGame;
-        restartGame.restart -= StartNewGame;
+        restartGame.restart -= RestartGame;
     }
 
     private void StartNewGame()
@@ -45,18 +47,26 @@ public class GameUI : MonoBehaviour
         turretShopView.gameObject.SetActive(true);
         moneyView.gameObject.SetActive(true);
         gameOverView.DisactiveLosePanel();
+        pauseMenuView.SetActivePauseIcon(true);
+        pauseMenuView.Init();
 
         startGame.StartGameplay();
     }
 
+    private void RestartGame()
+    {
+        startGame.ExitGame();
+        StartNewGame();
+    }
     private void LoseGame()
     {
         turretShopView.gameObject.SetActive(false);
-
+        pauseMenuView.SetActivePauseIcon(false);
     }
 
     private void BackToMenu()
     {
+        startGame.ExitGame();
         mainMenu.gameObject.SetActive(true);
         turretShopView.gameObject.SetActive(false);
         moneyView.gameObject.SetActive(false);

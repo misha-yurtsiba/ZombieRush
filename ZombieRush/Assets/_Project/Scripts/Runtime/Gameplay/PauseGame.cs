@@ -8,9 +8,9 @@ public class PauseGame : IPause
 
     private bool isGamePaused = false;
 
-    public void Pause()
+    public void Pause(bool isPause)
     {
-        isGamePaused = !isGamePaused;
-        pause?.Invoke(isGamePaused);
+        Debug.Log("Pause");
+        pause?.Invoke(isPause);
     }
 }

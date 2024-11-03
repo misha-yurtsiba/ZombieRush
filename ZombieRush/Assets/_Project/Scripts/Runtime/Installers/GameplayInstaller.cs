@@ -25,9 +25,9 @@ public class GameplayInstaller : MonoInstaller
     {
         BindTurretTiles();
 
+        BindRestartGame();
         BindGameOverView();
         BindGameOwer();
-        BindRestartGame();
         BindPauseGame();
 
         BindInputHandler();
@@ -104,7 +104,7 @@ public class GameplayInstaller : MonoInstaller
         Container
             .BindInterfacesAndSelfTo<GameOver>()
             .AsSingle()
-            .NonLazy();
+            .Lazy();
     }
 
     private void BindRestartGame()
@@ -112,7 +112,7 @@ public class GameplayInstaller : MonoInstaller
         Container
             .BindInterfacesAndSelfTo<RestartGame>()
             .AsSingle()
-            .NonLazy();
+            .Lazy();
     }
 
     private void BindPauseGame()

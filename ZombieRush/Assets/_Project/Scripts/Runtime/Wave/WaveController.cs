@@ -38,6 +38,7 @@ public class WaveController : MonoBehaviour
 
     public void StartGame()
     {
+        Debug.Log("spawn1");
         curentWave = waveConfigs[0];
         curentSubwave = curentWave.subWaves[0];
         subWaveCount = 0;
@@ -58,7 +59,6 @@ public class WaveController : MonoBehaviour
         {
             NextWave();
         }
-
     }
 
     private void NextWave()

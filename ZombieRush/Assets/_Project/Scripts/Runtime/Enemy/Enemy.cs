@@ -15,19 +15,29 @@ public class Enemy : MonoBehaviour
 
     public Action<Enemy> enemyDestroyed;
 
+    private Animator animator;
     private ObjectPool<Enemy> enemyPool;
     private Money money;
     private Vector3 targetPosition;
+
+    private bool canMoving;
 
     public void Init(Vector3 targetPosition,ObjectPool<Enemy> enemyPool, Money money)
     {
         this.targetPosition = targetPosition;
         this.enemyPool = enemyPool;
         this.money = money;
+
+        canMoving = true;
+
+        if(animator == null)
+            animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
+        if (!canMoving) return;
+
         transform.position = Vector3.MoveTowards(transform.position,targetPosition,movingSpeed * Time.deltaTime);
     }
 
@@ -41,6 +51,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void CanMoving(bool canMove)
+    {
+        canMoving = canMove;
+        animator.speed = (canMove) ? 1 : 0;
+
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.TryGetComponent(out PlayerHealth playerHealth))

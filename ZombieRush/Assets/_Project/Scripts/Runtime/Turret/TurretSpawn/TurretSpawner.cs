@@ -43,6 +43,10 @@ public class TurretSpawner : IDisposable
         inputHandler.playerTouched += SpawnTurret;
         emptyTurretTiles = turretTiles.GetTuretTiles();
 
+        foreach (TurretTile tile in emptyTurretTiles)
+            if (tile.curentTurret == null)
+                tile.SetActiveBlinking(true);
+
         isSpawning = true;
     }
 
@@ -61,7 +65,7 @@ public class TurretSpawner : IDisposable
         }
 
         foreach (TurretTile tile in emptyTurretTiles)
-            if (tile.curentTurret == null)
+                tile.SetActiveBlinking(false);
 
         inputHandler.playerTouched -= SpawnTurret;
         isSpawning = false;
@@ -83,7 +87,7 @@ public class TurretSpawner : IDisposable
         UnityEngine.Object.Destroy(turret.gameObject);
     }
 
-    private void RemoveAllTurret()
+    public void RemoveAllTurret()
     {
         foreach (Turret turret in turretsList)
             UnityEngine.Object.Destroy(turret.gameObject);

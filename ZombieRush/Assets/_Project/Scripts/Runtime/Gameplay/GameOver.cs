@@ -8,11 +8,14 @@ public class GameOver : IGameOver
     private int curentWave;
 
     private GameOverView gameOverView;
+    private RestartGame restartGame;
 
     public bool isGameOver { get; set; }
-    public GameOver(GameOverView gameOverView)
+    public GameOver(GameOverView gameOverView, RestartGame restartGame)
     {
         this.gameOverView = gameOverView;
+        this.restartGame = restartGame;
+
     }
 
     public void Init()
@@ -28,4 +31,5 @@ public class GameOver : IGameOver
     }
 
     public void SetCurentWave(int waveCount) => curentWave = waveCount;
+
 }

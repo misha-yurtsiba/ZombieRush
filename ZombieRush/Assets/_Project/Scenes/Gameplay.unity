@@ -524,6 +524,7 @@ MonoBehaviour:
   turretShopView: {fileID: 2143572638}
   moneyView: {fileID: 958881009}
   gameOverView: {fileID: 958881012}
+  pauseMenuView: {fileID: 958881013}
 --- !u!4 &62952598
 Transform:
   m_ObjectHideFlags: 0
@@ -553,6 +554,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TurretPlatform (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.b
+      value: 0.35283017
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.r
+      value: 0.38328522
       objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671095, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
@@ -827,6 +848,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TurretPlatform (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.b
+      value: 0.35283017
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.r
+      value: 0.38328522
       objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671095, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
@@ -1991,6 +2032,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretPlatform (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.b
+      value: 0.35283017
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.r
+      value: 0.38328522
+      objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671095, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
       propertyPath: m_RootOrder
@@ -3005,6 +3066,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretPlatform (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.b
+      value: 0.35283017
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.r
+      value: 0.38328522
+      objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671095, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
       propertyPath: m_RootOrder
@@ -3592,6 +3673,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretPlatform
       objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.b
+      value: 0.35283017
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.r
+      value: 0.38328522
+      objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671095, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
       propertyPath: m_RootOrder
@@ -4022,6 +4123,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TurretPlatform (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.b
+      value: 0.35283017
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.r
+      value: 0.38328522
       objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671095, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
@@ -5297,9 +5418,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3fdb3a8136144c4b8415806bce07592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenuPanel: {fileID: 963997638}
+  exitButton: {fileID: 216337967}
   continueButton: {fileID: 1156309937}
   pauseButton: {fileID: 368497085}
-  pauseMenuPanel: {fileID: 963997638}
+  restartButton: {fileID: 2127690500}
   pauseActiveIcon: {fileID: 21300066, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   pauseDisactiveIcon: {fileID: 21300068, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
 --- !u!1 &963997638
@@ -6129,6 +6252,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TurretPlatform (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.b
+      value: 0.35283017
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.r
+      value: 0.38328522
       objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671095, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
@@ -7564,6 +7707,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretPlatform (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.b
+      value: 0.35283017
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.r
+      value: 0.38328522
+      objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671095, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
       propertyPath: m_RootOrder
@@ -8515,6 +8678,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretPlatform (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.b
+      value: 0.35283017
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.r
+      value: 0.38328522
+      objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671095, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
       propertyPath: m_RootOrder
@@ -9455,6 +9638,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretPlatform (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.b
+      value: 0.35283017
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.r
+      value: 0.38328522
+      objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671095, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
       propertyPath: m_RootOrder
@@ -10060,6 +10263,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretPlatform (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.b
+      value: 0.35283017
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.r
+      value: 0.38328522
+      objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671095, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
       propertyPath: m_RootOrder
@@ -10314,6 +10537,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TurretPlatform (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.b
+      value: 0.35283017
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.r
+      value: 0.38328522
       objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671095, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
@@ -11587,6 +11830,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretPlatform (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.b
+      value: 0.35283017
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.r
+      value: 0.38328522
+      objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671095, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
       propertyPath: m_RootOrder
@@ -11777,6 +12040,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TurretPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.b
+      value: 0.35283017
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: endColor.r
+      value: 0.38328522
       objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671095, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
