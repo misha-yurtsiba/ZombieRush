@@ -3,14 +3,14 @@ using UnityEngine;
 public class LaserTurret : Turret
 {
     [SerializeField] private float damagePerSecond;
+    [SerializeField] private float laserSpead = 2;
 
     private LineRenderer lineRenderer;
-    private float laserSpead;
 
     private void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
-        laserSpead = lineRenderer.sharedMaterial.GetFloat("_LaserSpead");
+        lineRenderer.sharedMaterial.SetFloat("_LaserSpead", laserSpead);
     }
     private void Update()
     {
@@ -33,9 +33,9 @@ public class LaserTurret : Turret
         targetEnemy.TakeDamage(damagePerSecond * Time.deltaTime);
     }
 
-    protected override void IsGamePused(bool isPaused)
+    protected override void IsGamePaused(bool isPaused)
     {
-        base.IsGamePused(isPaused);
+        base.IsGamePaused(isPaused);
 
         if (isPaused)
             lineRenderer.sharedMaterial.SetFloat("_LaserSpead", 0);

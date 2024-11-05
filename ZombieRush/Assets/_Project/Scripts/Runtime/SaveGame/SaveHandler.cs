@@ -1,8 +1,9 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SaveHandler
+public class SaveHandler : IDisposable
 {
     private Money money;
     private PlayerHealth health;
@@ -11,16 +12,27 @@ public class SaveHandler
     private WaveController waveController;
 
     private SaveSystem saveSystem;
+    private IGameOver gameOver;
 
-    public SaveHandler(Money money, PlayerHealth health, TurretTiles turretTiles, TurretSpawner turretSpawner, WaveController waveController)
+    public SaveHandler(Money money, PlayerHealth health, TurretTiles turretTiles, TurretSpawner turretSpawner, WaveController waveController, IGameOver gameOver)
     {
         this.money = money;
         this.health = health;
         this.turretTiles = turretTiles;
         this.turretSpawner = turretSpawner;
         this.waveController = waveController;
+        this.gameOver = gameOver;
 
         saveSystem = new SaveSystem();
+
+        waveController.nextWave += SaveGame;
+        gameOver.gameOver += DeleteSave;
+    }
+
+    public void Dispose()
+    {
+        waveController.nextWave -= SaveGame;
+        gameOver.gameOver -= DeleteSave;
     }
 
     public void SaveGame()
@@ -51,7 +63,17 @@ public class SaveHandler
     {
         GameData gameData = saveSystem.LoadData();
 
+        health.LoadHealth(gameData.playerHealth);
+        waveController.LoadWave(gameData.waveCount);
+        money.SetStartMoney(gameData.playerMoney);
         turretSpawner.LoadTurrets(gameData.turretTileDatas);
 
     }
+
+    public bool IsSaveExist()
+    {
+        return saveSystem.IsFileExist();
+    } 
+
+    public void DeleteSave() => saveSystem.DeleteSaveFile();
 }

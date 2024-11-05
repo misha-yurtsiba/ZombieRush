@@ -37,6 +37,9 @@ public class PauseMenuView : MonoBehaviour
     public void Init()
     {
         pauseButton.image.sprite = pauseDisactiveIcon;
+
+        pauseButton.onClick.RemoveListener(DisactivePausePanel);
+        pauseButton.onClick.AddListener(ActivePausePanel);
         pauseMenuPanel.SetActive(false);
     }
     public void SetActivePauseIcon(bool value) => pauseButton.gameObject.SetActive(value);
@@ -59,6 +62,7 @@ public class PauseMenuView : MonoBehaviour
 
     public void DisactivePausePanel()
     {
+        Debug.Log("Disactive");
         pauseButton.onClick.RemoveListener(DisactivePausePanel);
         pauseButton.onClick.AddListener(ActivePausePanel);
 
@@ -72,7 +76,7 @@ public class PauseMenuView : MonoBehaviour
 
     private void Restart()
     {
-        restartGame.Restart();
         DisactivePausePanel();
+        restartGame.Restart();
     }
 }

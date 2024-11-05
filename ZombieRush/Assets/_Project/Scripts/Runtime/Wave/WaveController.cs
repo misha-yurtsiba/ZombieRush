@@ -8,6 +8,8 @@ public class WaveController : MonoBehaviour
 {
     [SerializeField] private WaveConfig[] waveConfigs;
 
+    public event Action nextWave;
+
     private WaveConfig curentWave;
     private SubWave curentSubwave;
     private EnemySpawner enemySpawner;
@@ -63,7 +65,9 @@ public class WaveController : MonoBehaviour
 
     private void NextWave()
     {
+
         waveCount++;
+        nextWave?.Invoke();
         subWaveCount = 0;
         curentWave = waveConfigs[waveCount];
         curentSubwave = curentWave.subWaves[subWaveCount];
@@ -75,5 +79,16 @@ public class WaveController : MonoBehaviour
     private void GameOver()
     {
         gameOver.SetCurentWave(waveCount);
+    }
+
+    public void LoadWave(int loadWave)
+    {
+        curentWave = waveConfigs[loadWave];
+        curentSubwave = curentWave.subWaves[0];
+        subWaveCount = 0;
+        waveCount = loadWave;
+        waveView.ChangeWaveText(waveCount);
+        enemySpawner.StartSpawn(curentSubwave, curentWave.timeBetweenSubwave);
+        subWaveCount++;
     }
 }

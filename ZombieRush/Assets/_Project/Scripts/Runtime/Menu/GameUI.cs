@@ -30,6 +30,12 @@ public class GameUI : MonoBehaviour
         mainMenu.continueGameButton.onClick.AddListener(ContinueGame);
         gameOverView.exitButton.onClick.AddListener(BackToMenu);
         pauseMenuView.exitButton.onClick.AddListener(BackToMenu);
+
+        if (saveHandler.IsSaveExist())
+            mainMenu.continueGameButton.gameObject.SetActive(true);
+        else
+            mainMenu.continueGameButton.gameObject.SetActive(false);
+        
     }
 
     private void OnEnable()
@@ -46,20 +52,16 @@ public class GameUI : MonoBehaviour
 
     private void StartNewGame()
     {
-        mainMenu.gameObject.SetActive(false);
-        turretShopView.gameObject.SetActive(true);
-        moneyView.gameObject.SetActive(true);
-        gameOverView.DisactiveLosePanel();
-        pauseMenuView.SetActivePauseIcon(true);
-        pauseMenuView.Init();
+        ActiveGameUi();
+        if (saveHandler.IsSaveExist()) saveHandler.DeleteSave();
 
         startGame.StartGameplay();
     }
 
     private void ContinueGame()
     {
-        StartNewGame();
-        saveHandler.LoadGame();
+        ActiveGameUi();
+        startGame.ContinueGame();
     }
     private void RestartGame()
     {
@@ -72,6 +74,16 @@ public class GameUI : MonoBehaviour
         pauseMenuView.SetActivePauseIcon(false);
     }
 
+    private void ActiveGameUi()
+    {
+        mainMenu.gameObject.SetActive(false);
+        turretShopView.gameObject.SetActive(true);
+        moneyView.gameObject.SetActive(true);
+        gameOverView.DisactiveLosePanel();
+        pauseMenuView.SetActivePauseIcon(true);
+        pauseMenuView.Init();
+    }
+
     private void BackToMenu()
     {
         startGame.ExitGame();
@@ -79,6 +91,12 @@ public class GameUI : MonoBehaviour
         turretShopView.gameObject.SetActive(false);
         moneyView.gameObject.SetActive(false);
         gameOverView.DisactiveLosePanel();
-        saveHandler.SaveGame();
+
+        if (saveHandler.IsSaveExist())
+            mainMenu.continueGameButton.gameObject.SetActive(true);
+        else
+            mainMenu.continueGameButton.gameObject.SetActive(false);
     }
+
+    
 }

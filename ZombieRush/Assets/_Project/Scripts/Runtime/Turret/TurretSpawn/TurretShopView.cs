@@ -28,13 +28,13 @@ public class TurretShopView : MonoBehaviour
     private void OnEnable() 
     {
         money.onValueChanget += ChangeTextColor;
-        turretSpawner.turretSpawned += ChangeTurretPriceText;
+        turretSpawner.changeTurretPrice += ChangeTurretPriceText;
     }
 
     private void OnDisable()
     {
         money.onValueChanget -= ChangeTextColor;
-        turretSpawner.turretSpawned -= ChangeTurretPriceText;
+        turretSpawner.changeTurretPrice -= ChangeTurretPriceText;
     }
 
     private void ChangeTextColor(int mewMoney)

@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class TurretSpawner : IDisposable
 {
-    public Action<int> turretSpawned;
+    public event Action<int> changeTurretPrice;
 
-    public int turretPrice = 100;
+    public int turretStartPrice = 100;
+    public int turretPrice;
+
+    
 
     private InputHandler inputHandler;
     private TurretTiles turretTiles;
@@ -15,25 +18,30 @@ public class TurretSpawner : IDisposable
     private List<Turret> turretsList = new List<Turret>();
     private ITurretFactory turretFactory;
     private IGameOver gameOver;
+    private IRestart restartGame;
     private IEnumerable<TurretTile> emptyTurretTiles;
 
     public bool isSpawning { get; private set; }
-    public TurretSpawner(InputHandler inputHandler, TurretTiles turretTiles, ITurretFactory turretFactory, IGameOver gameOver, Money money)
+    public TurretSpawner(InputHandler inputHandler, TurretTiles turretTiles, ITurretFactory turretFactory, IGameOver gameOver, IRestart restartGame, Money money)
     {
         this.inputHandler = inputHandler;
         this.turretTiles = turretTiles;
         this.turretFactory = turretFactory;
         this.money = money;
         this.gameOver = gameOver;
+        this.restartGame = restartGame;
 
         isSpawning = false;
+        turretPrice = turretStartPrice;
 
         gameOver.gameOver += RemoveAllTurret;
+        restartGame.restart += ResetTurretPrice;
     }
 
     public void Dispose()
     {
         gameOver.gameOver -= RemoveAllTurret;
+        restartGame.restart -= ResetTurretPrice;
     }
 
     public void BuyTurret()
@@ -60,8 +68,8 @@ public class TurretSpawner : IDisposable
             Turret newTurret = GetOneTurret(1, turretTile);
             money.Buy(turretPrice);
 
-            //turretPrice += (int)Mathf.Round(turretPrice * 0.1f / 10) * 10;
-            turretSpawned?.Invoke(turretPrice);
+            turretPrice += (int)Mathf.Round(turretPrice * 0.1f / 10) * 10;
+            changeTurretPrice?.Invoke(turretPrice);
         }
 
         foreach (TurretTile tile in emptyTurretTiles)
@@ -106,5 +114,11 @@ public class TurretSpawner : IDisposable
             Turret newTurret = GetOneTurret(tileData.turretLevel, tiles[tileData.turretTileId]);
         }
 
+    }
+
+    private void ResetTurretPrice()
+    {
+        turretPrice = turretStartPrice;
+        changeTurretPrice?.Invoke(turretPrice);
     }
 }

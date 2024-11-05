@@ -407,10 +407,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c3f91a21bc55f4a9c25c4dc2929eee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killMoney: 75
-  movingSpeed: 1
-  health: 150
-  damage: 50
+  killMoney: 30
+  movingSpeed: 1.2
+  health: 50
+  damage: 5
 --- !u!136 &4041443563873912967
 CapsuleCollider:
   m_ObjectHideFlags: 0

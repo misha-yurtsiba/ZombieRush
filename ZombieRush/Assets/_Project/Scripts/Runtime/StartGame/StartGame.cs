@@ -13,7 +13,7 @@ public class StartGame : IStartGame
     private InputHandler inputHandler;
     private GameOver gameOver;
     private PlayerHealth playerHealth;
-
+    private SaveHandler saveHandler;
 
     public StartGame(
         TurretTiles turretTiles,
@@ -23,7 +23,8 @@ public class StartGame : IStartGame
         EnemySpawner enemySpawner,
         TurretSpawner turretSpawner,
         GameOver gameOver,
-        PlayerHealth playerHealth)
+        PlayerHealth playerHealth,
+        SaveHandler saveHandler)
     {
         this.turretTiles = turretTiles;
         this.waveController = waveController;
@@ -33,16 +34,25 @@ public class StartGame : IStartGame
         this.gameOver = gameOver;
         this.playerHealth = playerHealth;
         this.turretSpawner = turretSpawner;
+        this.saveHandler = saveHandler;
     }
 
     public void StartGameplay()
     {
-        money.SetStartMoney(2000);
+        money.SetStartMoney(100);
         turretTiles.SetTurettTiles();
         waveController.StartGame();
         inputHandler.Init();
         gameOver.Init();
         playerHealth.Init();
+    }
+
+    public void ContinueGame()
+    {
+        turretTiles.SetTurettTiles();
+        inputHandler.Init();
+        gameOver.Init();
+        saveHandler.LoadGame();
     }
 
     public void ExitGame()

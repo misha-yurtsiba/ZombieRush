@@ -14,7 +14,7 @@ public class Bootstrap : MonoBehaviour
     }
     void Start()
     {
-        Application.targetFrameRate = Screen.currentResolution.refreshRate;
+        Application.targetFrameRate = 60;
 
         sceneLoad.LoadScene(SceneName.Gameplay);
     }

@@ -483,11 +483,12 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  attackRange: 7.5
+  attackRange: 8
   rotationSpead: 15
   turretPrice: 100
   <level>k__BackingField: 3
-  damagePerSecond: 10
+  damagePerSecond: 12.5
+  laserSpead: 2
 --- !u!120 &8634182501851294992
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -531,7 +532,7 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 1, y: 1, z: 1}
+  - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1

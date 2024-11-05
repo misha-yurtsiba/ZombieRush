@@ -22,7 +22,7 @@ public class SaveSystem
 
     public GameData LoadData()
     {
-        if (!IsSaveExist()) return null;
+        if (!IsFileExist()) return null;
 
         string json = File.ReadAllText(filePath);
 
@@ -30,8 +30,10 @@ public class SaveSystem
 
         return gameData;
     }
-    public bool IsSaveExist()
+    public bool IsFileExist()
     {
         return File.Exists(filePath);
     }
+
+    public void DeleteSaveFile() => File.Delete(filePath);
 }

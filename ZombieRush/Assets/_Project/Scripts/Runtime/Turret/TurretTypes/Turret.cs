@@ -34,8 +34,8 @@ public abstract class Turret : MonoBehaviour
         gamePaused = false;
     }
     
-    private void OnEnable() => pauseGame.pause += IsGamePused;
-    private void OnDisable() => pauseGame.pause -= IsGamePused;
+    private void OnEnable() => pauseGame.pause += IsGamePaused;
+    private void OnDisable() => pauseGame.pause -= IsGamePaused;
     protected void Update()
     {
         RotateTurret();
@@ -98,7 +98,7 @@ public abstract class Turret : MonoBehaviour
             canAttack = true;
     }
 
-    protected virtual void IsGamePused(bool isPaused)
+    protected virtual void IsGamePaused(bool isPaused)
     {
         gamePaused = isPaused;
     }

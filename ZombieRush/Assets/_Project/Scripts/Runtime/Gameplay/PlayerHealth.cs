@@ -34,6 +34,11 @@ public class PlayerHealth : MonoBehaviour
         
         isLose = false;
     }
+
+    public void LoadHealth(float loadHealth)
+    {
+        curentHealth = loadHealth;
+    }
     public void TakeDamage(float damage, Vector3 damagePosition)
     {
         if (isLose) return;
