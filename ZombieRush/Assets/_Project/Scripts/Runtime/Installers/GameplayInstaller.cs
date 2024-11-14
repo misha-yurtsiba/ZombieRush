@@ -12,10 +12,10 @@ public class GameplayInstaller : MonoInstaller
     [SerializeField] private WaveView waveView;
     [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private PlayerHealthView playerHealthView;
-    [SerializeField] private GameOverView gameOverView;
 
     [Header("Prefabs"),Space(2)]
     [SerializeField] private List<Turret> turrets;
+    [SerializeField] private List<Enemy> enemyPrefabs;
     [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private Rocket rocketPrefab;
     [SerializeField] private Explosion explosionPrefab;
@@ -23,12 +23,6 @@ public class GameplayInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
-
-        BindRestartGame();
-        BindGameOverView();
-        BindGameOwer();
-        BindPauseGame();
-
         BindSaveHandler();
 
         BindInputHandler();
@@ -46,13 +40,13 @@ public class GameplayInstaller : MonoInstaller
         BindBulletPool();
         BindRocketPool();
         BindExplosionPool();
+
         BingTurretSpawner();
         BindTurretMover();
         BindTurretTiles();
 
         BindMoney();
-        //BindEnemyFactory();
-        //BindEnemyPool();
+        BindEnemyPools();
         BindEnemySpawner();
 
         BindWaveController();
@@ -94,36 +88,7 @@ public class GameplayInstaller : MonoInstaller
             .AsSingle()
             .Lazy();
     }
-    private void BindGameOverView()
-    {
-        Container
-            .BindInstance(gameOverView)
-            .AsSingle()
-            .Lazy();
-    }
-    private void BindGameOwer()
-    {
-        Container
-            .BindInterfacesAndSelfTo<GameOver>()
-            .AsSingle()
-            .Lazy();
-    }
 
-    private void BindRestartGame()
-    {
-        Container
-            .BindInterfacesAndSelfTo<RestartGame>()
-            .AsSingle()
-            .Lazy();
-    }
-
-    private void BindPauseGame()
-    {
-        Container
-            .BindInterfacesAndSelfTo<PauseGame>()
-            .AsSingle()
-            .Lazy();
-    }
     private void BindSaveHandler()
     {
         Container
@@ -251,22 +216,21 @@ public class GameplayInstaller : MonoInstaller
             .AsSingle()
             .Lazy();
     }
-    private void BindEnemyFactory()
+    private void BindEnemyPools()
     {
+        Dictionary<int, ObjectPool<Enemy>> enemyPools = new Dictionary<int , ObjectPool<Enemy>>();
+        DiContainer diContainer = Container.Resolve<DiContainer>();
+
+        foreach(Enemy enemy in enemyPrefabs)
+        {
+            GameObjectFactory<Enemy> enemyFactory = new EnemyFactory(diContainer, enemy);
+            enemyPools.Add(enemy.level, new ObjectPool<Enemy>(enemyFactory, 3));
+        } 
+
         Container
-            .Bind<GameObjectFactory<Enemy>>()
-            .To<EnemyFactory>()
+            .Bind<Dictionary<int, ObjectPool<Enemy>>>()
+            .FromInstance(enemyPools)
             .AsSingle()
-            .Lazy();
-    }
-
-    private void BindEnemyPool()
-    {
-
-            Container
-            .BindInterfacesAndSelfTo<ObjectPool<Enemy>>()
-            .AsSingle()
-            .WithArguments(5)
             .Lazy();
     }
 

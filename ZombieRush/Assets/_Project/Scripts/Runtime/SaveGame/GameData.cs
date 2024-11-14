@@ -7,6 +7,7 @@ public class GameData
 {
     public int waveCount;
     public int playerMoney;
+    public int turretPrice;
     public float playerHealth;
     public List<TurretTileData> turretTileDatas;
 }

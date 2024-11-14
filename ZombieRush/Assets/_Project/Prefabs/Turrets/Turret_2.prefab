@@ -142,7 +142,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3373468760828897025, guid: 2e1e256fbb04465439a7c5d12b8f4b55,
     type: 3}
   attackRate: 0.75
-  damage: 5
+  damage: 4
   muzzles:
   - {fileID: 4629151270724021044}
   - {fileID: 948032190751417758}

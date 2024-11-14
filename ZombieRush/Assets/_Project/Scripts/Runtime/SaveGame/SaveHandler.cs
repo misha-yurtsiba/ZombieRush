@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class SaveHandler : IDisposable
 {
-    private Money money;
-    private PlayerHealth health;
-    private TurretTiles turretTiles;
-    private TurretSpawner turretSpawner;
-    private WaveController waveController;
+    private readonly Money money;
+    private readonly PlayerHealth health;
+    private readonly TurretTiles turretTiles;
+    private readonly TurretSpawner turretSpawner;
+    private readonly WaveController waveController;
+    private readonly IGameOver gameOver;
 
     private SaveSystem saveSystem;
-    private IGameOver gameOver;
 
     public SaveHandler(Money money, PlayerHealth health, TurretTiles turretTiles, TurretSpawner turretSpawner, WaveController waveController, IGameOver gameOver)
     {
@@ -53,6 +53,7 @@ public class SaveHandler : IDisposable
 
         gameData.waveCount = waveController.waveCount;
         gameData.playerMoney = money.PlayerMoney;
+        gameData.turretPrice = turretSpawner.turretPrice;
         gameData.playerHealth = health.curentHealth;
         gameData.turretTileDatas = turretTileDatas;
 
@@ -65,6 +66,7 @@ public class SaveHandler : IDisposable
 
         health.LoadHealth(gameData.playerHealth);
         waveController.LoadWave(gameData.waveCount);
+        turretSpawner.LoadTurretPrice(gameData.turretPrice);
         money.SetStartMoney(gameData.playerMoney);
         turretSpawner.LoadTurrets(gameData.turretTileDatas);
 

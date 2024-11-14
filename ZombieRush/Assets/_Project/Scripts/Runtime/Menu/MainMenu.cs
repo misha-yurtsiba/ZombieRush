@@ -7,4 +7,5 @@ public class MainMenu : MonoBehaviour
 {
     public Button newGameButton;
     public Button continueGameButton;
+    public Button exitButton;
 }

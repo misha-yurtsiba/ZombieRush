@@ -5,15 +5,15 @@ using UnityEngine;
 using Zenject;
 public class StartGame : IStartGame
 {
-    private TurretTiles turretTiles;
-    private WaveController waveController;
-    private EnemySpawner enemySpawner;
-    private TurretSpawner turretSpawner;
-    private Money money;
-    private InputHandler inputHandler;
-    private GameOver gameOver;
-    private PlayerHealth playerHealth;
-    private SaveHandler saveHandler;
+    private readonly TurretTiles turretTiles;
+    private readonly WaveController waveController;
+    private readonly EnemySpawner enemySpawner;
+    private readonly TurretSpawner turretSpawner;
+    private readonly Money money;
+    private readonly InputHandler inputHandler;
+    private readonly GameOver gameOver;
+    private readonly PlayerHealth playerHealth;
+    private readonly SaveHandler saveHandler;
 
     public StartGame(
         TurretTiles turretTiles,

@@ -57,7 +57,7 @@ MonoBehaviour:
   <level>k__BackingField: 4
   bulletPrefab: {fileID: 3373468760828897025, guid: 2e1e256fbb04465439a7c5d12b8f4b55,
     type: 3}
-  attackRate: 0.25
+  attackRate: 0.2
   damage: 5
 --- !u!1 &3157858391690278715
 GameObject:

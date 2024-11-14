@@ -997,10 +997,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c3f91a21bc55f4a9c25c4dc2929eee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <level>k__BackingField: 5
   killMoney: 200
-  movingSpeed: 0.5
+  movingSpeed: 0.65
   health: 300
-  damage: 50
+  damage: 25
+  isSpavned: 0
 --- !u!1 &7011776542129151788
 GameObject:
   m_ObjectHideFlags: 0

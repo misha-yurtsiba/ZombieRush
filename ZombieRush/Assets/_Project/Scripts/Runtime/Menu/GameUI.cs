@@ -28,6 +28,8 @@ public class GameUI : MonoBehaviour
     {
         mainMenu.newGameButton.onClick.AddListener(StartNewGame);
         mainMenu.continueGameButton.onClick.AddListener(ContinueGame);
+        mainMenu.exitButton.onClick.AddListener(() => Application.Quit());
+
         gameOverView.exitButton.onClick.AddListener(BackToMenu);
         pauseMenuView.exitButton.onClick.AddListener(BackToMenu);
 

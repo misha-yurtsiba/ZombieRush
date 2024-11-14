@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709de76e99a9b3f4084fe4381d437380, type: 3}
+  m_Name: Wave 33
+  m_EditorClassIdentifier: 
+  subWaves:
+  - enemyPrefab: {fileID: 703183600463202310, guid: a3a369a1195401a4d9bba2d41fca7b4c,
+      type: 3}
+    spawnInterval: 1
+    maxEnemyCount: 30
+  - enemyPrefab: {fileID: 602988339822776524, guid: c4af49b921e74974e8be0beb26a87b82,
+      type: 3}
+    spawnInterval: 3
+    maxEnemyCount: 10
+  - enemyPrefab: {fileID: 703183600463202310, guid: a3a369a1195401a4d9bba2d41fca7b4c,
+      type: 3}
+    spawnInterval: 1
+    maxEnemyCount: 20
+  timeBetweenSubwave: 8
