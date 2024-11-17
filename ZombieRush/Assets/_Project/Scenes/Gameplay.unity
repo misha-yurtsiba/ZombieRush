@@ -97,8 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 5a34f7a5991c3d04ea53b0ab7a1b6944,
-    type: 2}
+  m_LightingDataAsset: {fileID: 0}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -348,6 +347,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Lane_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -482,6 +485,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1921356743799483089, guid: 7d3e866ce6c8b9c49bebb0932208e715,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9060713102422969604, guid: 7d3e866ce6c8b9c49bebb0932208e715, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7d3e866ce6c8b9c49bebb0932208e715, type: 3}
@@ -554,6 +562,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TurretPlatform (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671092, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
@@ -629,6 +642,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356371729809500663, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83c11148d0ef6f14eac1441a3e982cf2, type: 3}
@@ -785,6 +803,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Lane_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -848,6 +870,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TurretPlatform (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671092, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
@@ -923,6 +950,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356371729809500663, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83c11148d0ef6f14eac1441a3e982cf2, type: 3}
@@ -1134,6 +1166,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SandBagWall_04_v2 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052786145037884313, guid: 54d8b5f898d226149905f2836c474e9b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2782315285047850117, guid: 54d8b5f898d226149905f2836c474e9b, type: 3}
@@ -1570,7 +1607,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1761,6 +1798,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenBarbedWireBarrier_33_v1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5780034516089840320, guid: b4b7339fb3082864b8444ec917d80cf4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6592458862164998266, guid: b4b7339fb3082864b8444ec917d80cf4,
         type: 3}
       propertyPath: m_RootOrder
@@ -1855,6 +1897,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ConcreteBarrier_29_v3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806931415079242370, guid: f5b099e6487383d4f8661e894b5d3f64,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4806931415430870042, guid: f5b099e6487383d4f8661e894b5d3f64,
         type: 3}
@@ -2054,6 +2101,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretPlatform (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671092, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
       propertyPath: speed
@@ -2129,6 +2181,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5356371729809500663, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83c11148d0ef6f14eac1441a3e982cf2, type: 3}
 --- !u!4 &288017956 stripped
@@ -2147,6 +2204,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d59a4f6080634af41a616bc51af1d2d9, type: 3}
       propertyPath: m_Name
       value: Props_Dustbin (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d59a4f6080634af41a616bc51af1d2d9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d59a4f6080634af41a616bc51af1d2d9, type: 3}
       propertyPath: m_RootOrder
@@ -2222,6 +2283,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5a98a4c41704e24eb7e4dafcc7c42b4, type: 3}
       propertyPath: m_Name
       value: Road Intersection_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5a98a4c41704e24eb7e4dafcc7c42b4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5a98a4c41704e24eb7e4dafcc7c42b4, type: 3}
       propertyPath: m_RootOrder
@@ -2408,6 +2473,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ConcreteBarrier_29_v3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806931415079242370, guid: f5b099e6487383d4f8661e894b5d3f64,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4806931415430870042, guid: f5b099e6487383d4f8661e894b5d3f64,
         type: 3}
@@ -2620,6 +2690,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Lane_01 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -2732,6 +2806,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ConcreteBarrier_05_v1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7262790853368832553, guid: 40b46e1d91f880f45981175d9b4d1af0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7262790853368832554, guid: 40b46e1d91f880f45981175d9b4d1af0,
         type: 3}
@@ -2893,6 +2972,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SandBagWall_04_v2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052786145037884313, guid: 54d8b5f898d226149905f2836c474e9b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2782315285047850117, guid: 54d8b5f898d226149905f2836c474e9b, type: 3}
@@ -3090,6 +3174,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretPlatform (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671092, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
       propertyPath: speed
@@ -3164,6 +3253,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356371729809500663, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83c11148d0ef6f14eac1441a3e982cf2, type: 3}
@@ -3538,6 +3632,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Lane_04
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5dca1204e7e935d408728950a2ad997e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5dca1204e7e935d408728950a2ad997e, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -3621,6 +3719,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_Street Light (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -3697,6 +3799,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretPlatform
       objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671092, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
       propertyPath: speed
@@ -3772,6 +3879,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5356371729809500663, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83c11148d0ef6f14eac1441a3e982cf2, type: 3}
 --- !u!4 &514071051 stripped
@@ -3794,7 +3906,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &550084208
 Transform:
@@ -3840,6 +3952,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d59a4f6080634af41a616bc51af1d2d9, type: 3}
       propertyPath: m_Name
       value: Props_Dustbin (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d59a4f6080634af41a616bc51af1d2d9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d59a4f6080634af41a616bc51af1d2d9, type: 3}
       propertyPath: m_RootOrder
@@ -4053,6 +4169,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenBarbedWireBarrier_33_v1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5780034516089840320, guid: b4b7339fb3082864b8444ec917d80cf4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6592458862164998266, guid: b4b7339fb3082864b8444ec917d80cf4,
         type: 3}
       propertyPath: m_RootOrder
@@ -4148,6 +4269,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretPlatform (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671092, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
       propertyPath: speed
@@ -4222,6 +4348,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356371729809500663, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83c11148d0ef6f14eac1441a3e982cf2, type: 3}
@@ -4456,6 +4587,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_Coffee shop chair
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 97229e82747352a43b48688ec573f8e4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 97229e82747352a43b48688ec573f8e4, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -4610,6 +4745,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_RootOrder
       value: 57
@@ -4689,7 +4828,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &737720977
 Transform:
@@ -4742,6 +4881,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_RootOrder
@@ -4874,6 +5017,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MetalBarrier_06_v2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1806370008483339937, guid: afc561f13a5ea0346867dabaab718d45,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1572013702058865319, guid: afc561f13a5ea0346867dabaab718d45, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: afc561f13a5ea0346867dabaab718d45, type: 3}
@@ -4952,7 +5100,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -5147,6 +5295,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_Traffic Sign_speed limit
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ade71c5c1c1d014895f70f40ed67ed5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6ade71c5c1c1d014895f70f40ed67ed5, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -5222,6 +5374,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WoodenBarbedWireBarrier_33_v1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5780034516089840320, guid: b4b7339fb3082864b8444ec917d80cf4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6592458862164998266, guid: b4b7339fb3082864b8444ec917d80cf4,
         type: 3}
@@ -5635,6 +5792,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Lane_01 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -5754,6 +5915,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MetalBarrier_06_v2
       objectReference: {fileID: 0}
+    - target: {fileID: 1806370008483339937, guid: afc561f13a5ea0346867dabaab718d45,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1572013702058865319, guid: afc561f13a5ea0346867dabaab718d45, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: afc561f13a5ea0346867dabaab718d45, type: 3}
@@ -5844,6 +6010,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SandBagWall_04_v2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052786145037884313, guid: 54d8b5f898d226149905f2836c474e9b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2782315285047850117, guid: 54d8b5f898d226149905f2836c474e9b, type: 3}
@@ -5941,6 +6112,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4c14ffc6a7f79e942885227ac141590c, type: 3}
       propertyPath: m_Name
       value: Building_Books Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4c14ffc6a7f79e942885227ac141590c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c14ffc6a7f79e942885227ac141590c, type: 3}
       propertyPath: m_RootOrder
@@ -6096,6 +6271,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: building
       objectReference: {fileID: 0}
+    - target: {fileID: 4967800935213066097, guid: b9faa0dad419dcb45b26b2026a46d25c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5745181410927984075, guid: b9faa0dad419dcb45b26b2026a46d25c,
         type: 3}
       propertyPath: m_RootOrder
@@ -6184,6 +6364,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
       propertyPath: m_Name
       value: Road Lane_01 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
       propertyPath: m_RootOrder
@@ -6372,6 +6556,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretPlatform (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671092, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
       propertyPath: speed
@@ -6447,6 +6636,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5356371729809500663, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83c11148d0ef6f14eac1441a3e982cf2, type: 3}
 --- !u!4 &1042384475 stripped
@@ -6465,6 +6659,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_RootOrder
@@ -6765,6 +6963,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: bench 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5067761358855953532, guid: 99ffd8e5301e70b47941b11740fb436d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5557334976359237318, guid: 99ffd8e5301e70b47941b11740fb436d,
         type: 3}
       propertyPath: m_RootOrder
@@ -6855,6 +7058,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Lane_01 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -6917,6 +7124,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_Name
       value: Props_Street Light (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_RootOrder
@@ -6992,6 +7203,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_RootOrder
@@ -7114,6 +7329,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Lane_03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -7176,6 +7395,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e0e851c58997b9c438fae494e3412749, type: 3}
       propertyPath: m_Name
       value: Props_Hydrant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e0e851c58997b9c438fae494e3412749, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e0e851c58997b9c438fae494e3412749, type: 3}
       propertyPath: m_RootOrder
@@ -7651,6 +7874,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MetalBarrier_06_v2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1806370008483339937, guid: afc561f13a5ea0346867dabaab718d45,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1572013702058865319, guid: afc561f13a5ea0346867dabaab718d45, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: afc561f13a5ea0346867dabaab718d45, type: 3}
@@ -7670,6 +7898,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
       propertyPath: m_Name
       value: Road Lane_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
       propertyPath: m_RootOrder
@@ -7805,6 +8037,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SandBagWall_04_v2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3052786145037884313, guid: 54d8b5f898d226149905f2836c474e9b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2782315285047850117, guid: 54d8b5f898d226149905f2836c474e9b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 54d8b5f898d226149905f2836c474e9b, type: 3}
@@ -7825,6 +8062,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TurretPlatform (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671092, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
@@ -7901,6 +8143,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5356371729809500663, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83c11148d0ef6f14eac1441a3e982cf2, type: 3}
 --- !u!4 &1467686732 stripped
@@ -7919,6 +8166,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 2857b989c828950448ead142ca28e4a3, type: 3}
       propertyPath: m_Name
       value: Props_Traffic Signal_small (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2857b989c828950448ead142ca28e4a3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2857b989c828950448ead142ca28e4a3, type: 3}
       propertyPath: m_RootOrder
@@ -8066,6 +8317,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConcreteBarrier_08_v2
       objectReference: {fileID: 0}
+    - target: {fileID: 6964103292492116413, guid: ce48558ac6f7fbb498a1a5a73755bc9b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6964103292492116290, guid: ce48558ac6f7fbb498a1a5a73755bc9b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ce48558ac6f7fbb498a1a5a73755bc9b, type: 3}
@@ -8208,6 +8464,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Lane_01
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
       propertyPath: m_RootOrder
       value: 34
@@ -8271,6 +8531,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: bench 2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067761358855953532, guid: 99ffd8e5301e70b47941b11740fb436d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5557334976359237318, guid: 99ffd8e5301e70b47941b11740fb436d,
         type: 3}
@@ -8433,6 +8698,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: building 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6681885560901210873, guid: 76bacfd4206e862408cb8d500e4e99a1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76bacfd4206e862408cb8d500e4e99a1, type: 3}
 --- !u!4 &1524888135 stripped
@@ -8508,6 +8778,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SandBagPallet_16_v3
       objectReference: {fileID: 0}
+    - target: {fileID: 6707610326336762086, guid: 2e8e35039a5a5de429bb5ef87354e790,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5897272243262466650, guid: 2e8e35039a5a5de429bb5ef87354e790, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2e8e35039a5a5de429bb5ef87354e790, type: 3}
@@ -8527,6 +8802,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_Name
       value: Props_Street Light (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_RootOrder
@@ -8722,6 +9001,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretPlatform (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671092, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
       propertyPath: speed
@@ -8797,6 +9081,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5356371729809500663, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83c11148d0ef6f14eac1441a3e982cf2, type: 3}
 --- !u!4 &1574477000 stripped
@@ -8815,6 +9104,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 3a0bc997d3424474696ad8d2e7d684ab, type: 3}
       propertyPath: m_Name
       value: Building_House_02_color03
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3a0bc997d3424474696ad8d2e7d684ab, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a0bc997d3424474696ad8d2e7d684ab, type: 3}
       propertyPath: m_RootOrder
@@ -8890,6 +9183,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_Name
       value: Props_Street Light (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_RootOrder
@@ -9173,7 +9470,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1602915027
 Transform:
@@ -9315,6 +9612,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921356743799483089, guid: 7d3e866ce6c8b9c49bebb0932208e715,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9060713102422969604, guid: 7d3e866ce6c8b9c49bebb0932208e715, type: 3}
@@ -9610,6 +9912,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_Hydrant
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e0e851c58997b9c438fae494e3412749, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e0e851c58997b9c438fae494e3412749, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -9684,6 +9990,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d4cfcf659200d7548b90a5580c3ab18f, type: 3}
       propertyPath: m_Name
       value: Props_Traffic Signal_big
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d4cfcf659200d7548b90a5580c3ab18f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d4cfcf659200d7548b90a5580c3ab18f, type: 3}
       propertyPath: m_RootOrder
@@ -9761,6 +10071,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretPlatform (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671092, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
       propertyPath: speed
@@ -9835,6 +10150,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356371729809500663, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83c11148d0ef6f14eac1441a3e982cf2, type: 3}
@@ -9991,6 +10311,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WoodenBarbedWireBarrier_33_v1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5780034516089840320, guid: b4b7339fb3082864b8444ec917d80cf4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6592458862164998266, guid: b4b7339fb3082864b8444ec917d80cf4,
         type: 3}
@@ -10223,6 +10548,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenBarbedWireBarrier_33_v1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5780034516089840320, guid: b4b7339fb3082864b8444ec917d80cf4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6592458862164998266, guid: b4b7339fb3082864b8444ec917d80cf4,
         type: 3}
       propertyPath: m_RootOrder
@@ -10386,6 +10716,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretPlatform (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671092, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
       propertyPath: speed
@@ -10461,6 +10796,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5356371729809500663, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83c11148d0ef6f14eac1441a3e982cf2, type: 3}
 --- !u!4 &1809929468 stripped
@@ -10535,6 +10875,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SandBagWall_04_v2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052786145037884313, guid: 54d8b5f898d226149905f2836c474e9b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2782315285047850117, guid: 54d8b5f898d226149905f2836c474e9b, type: 3}
@@ -10661,6 +11006,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretPlatform (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671092, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
       propertyPath: speed
@@ -10736,6 +11086,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5356371729809500663, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83c11148d0ef6f14eac1441a3e982cf2, type: 3}
 --- !u!4 &1837205608 stripped
@@ -10754,6 +11109,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 5dca1204e7e935d408728950a2ad997e, type: 3}
       propertyPath: m_Name
       value: Road Lane_04 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5dca1204e7e935d408728950a2ad997e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5dca1204e7e935d408728950a2ad997e, type: 3}
       propertyPath: m_RootOrder
@@ -10873,6 +11232,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MetalBarrier_06_v2 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1806370008483339937, guid: afc561f13a5ea0346867dabaab718d45,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1572013702058865319, guid: afc561f13a5ea0346867dabaab718d45, type: 3}
@@ -11171,6 +11535,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenBarbedWireBarrier_33_v1
       objectReference: {fileID: 0}
+    - target: {fileID: 5780034516089840320, guid: b4b7339fb3082864b8444ec917d80cf4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6592458862164998266, guid: b4b7339fb3082864b8444ec917d80cf4,
         type: 3}
       propertyPath: m_RootOrder
@@ -11266,6 +11635,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenBarbedWireBarrier_33_v1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5780034516089840320, guid: b4b7339fb3082864b8444ec917d80cf4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6592458862164998266, guid: b4b7339fb3082864b8444ec917d80cf4,
         type: 3}
       propertyPath: m_RootOrder
@@ -11360,6 +11734,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_Street Light (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -11435,6 +11813,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Lane_01 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -11497,6 +11879,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_Name
       value: Props_Street Light (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_RootOrder
@@ -11572,6 +11958,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d59a4f6080634af41a616bc51af1d2d9, type: 3}
       propertyPath: m_Name
       value: Props_Dustbin
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d59a4f6080634af41a616bc51af1d2d9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d59a4f6080634af41a616bc51af1d2d9, type: 3}
       propertyPath: m_RootOrder
@@ -11738,6 +12128,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Lane_03
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
       propertyPath: m_RootOrder
       value: 33
@@ -11800,6 +12194,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_RootOrder
@@ -12089,6 +12487,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretPlatform (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671092, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
       propertyPath: speed
@@ -12163,6 +12566,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356371729809500663, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83c11148d0ef6f14eac1441a3e982cf2, type: 3}
@@ -12300,6 +12708,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretPlatform
       objectReference: {fileID: 0}
+    - target: {fileID: 4265771650522671092, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4265771650522671094, guid: 83c11148d0ef6f14eac1441a3e982cf2,
         type: 3}
       propertyPath: speed
@@ -12374,6 +12787,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356371729809500663, guid: 83c11148d0ef6f14eac1441a3e982cf2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83c11148d0ef6f14eac1441a3e982cf2, type: 3}

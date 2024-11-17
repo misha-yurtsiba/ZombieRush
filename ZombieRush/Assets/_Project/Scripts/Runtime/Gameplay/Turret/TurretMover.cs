@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class TurretMover : IDisposable
 {
-    private InputHandler inputHandler;
-    private TurretSpawner turretSpawner;
+    private readonly InputHandler inputHandler;
+    private readonly TurretSpawner turretSpawner;
 
     private Camera camera;
     private Turret movingTurret;

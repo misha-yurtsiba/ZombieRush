@@ -7,8 +7,8 @@ public class GameOver : IGameOver
     public event Action gameOver;
     private int curentWave;
 
-    private GameOverView gameOverView;
-    private RestartGame restartGame;
+    private readonly GameOverView gameOverView;
+    private readonly RestartGame restartGame;
 
     public bool isGameOver { get; set; }
     public GameOver(GameOverView gameOverView, RestartGame restartGame)
